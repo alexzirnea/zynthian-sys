@@ -124,7 +124,8 @@ $ZYNTHIAN_RECIPE_DIR/install_bolliedelay.sh
 $ZYNTHIAN_RECIPE_DIR/install_mclk.sh
 
 # Zynthian precompiled plugins
-$ZYNTHIAN_RECIPE_DIR/install_lv2_plugins_prebuilt.sh
+# These are precompiled for ARMv8. Not working on ARMv7!
+#$ZYNTHIAN_RECIPE_DIR/install_lv2_plugins_prebuilt.sh
 
 # Fixup amsynth bank/presets
 $ZYNTHIAN_RECIPE_DIR/fixup_amsynth.sh

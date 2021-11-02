@@ -102,12 +102,14 @@ apt-get -y autoremove
 
 # System
 apt-get -y remove --purge isc-dhcp-client triggerhappy logrotate dphys-swapfile
-apt-get -y install systemd avahi-daemon dhcpcd-dbus usbutils usbmount exfat-utils
+apt-get -y install systemd avahi-daemon dhcpcd-dbus usbutils exfat-utils
+## usbmount not found on armbian
 apt-get -y install xinit xserver-xorg-video-fbdev x11-xserver-utils xinput libgl1-mesa-dri vnc4server 
-apt-get -y install xfwm4 xfwm4-themes xfce4-panel xdotool
-
+apt-get -y install xfwm4 xfce4-panel xdotool
+#xfwm4-themes not found on armbian
 apt-get -y install wpasupplicant wireless-tools iw hostapd dnsmasq
-apt-get -y install firmware-brcm80211 firmware-atheros firmware-realtek atmel-firmware firmware-misc-nonfree
+apt-get -y install firmware-atheros firmware-realtek atmel-firmware firmware-misc-nonfree
+#firmware-brcm80211 not applicable for armbian 
 #firmware-ralink
 
 # Alternate XServer with some 2D acceleration
@@ -115,7 +117,8 @@ apt-get -y install firmware-brcm80211 firmware-atheros firmware-realtek atmel-fi
 #ln -s /usr/lib/arm-linux-gnueabihf/xorg/modules/drivers/fbturbo_drv.so /usr/lib/xorg/modules/drivers
 
 # CLI Tools
-apt-get -y install raspi-config psmisc tree joe nano vim p7zip-full i2c-tools
+apt-get -y install psmisc tree joe nano vim p7zip-full i2c-tools
+#raspi-config not fount on armbian
 apt-get -y install fbi scrot mpg123  mplayer xloadimage imagemagick fbcat abcmidi
 apt-get -y install evtest libts-bin # touchscreen tools
 #apt-get install python-smbus (i2c with python)
@@ -161,9 +164,14 @@ if [ "$ZYNTHIAN_INCLUDE_PIP" == "yes" ]; then
     apt-get -y install python-pip python3-pip
 fi
 
+#Needed for python packages build?
+pip3 install wheel
 pip3 install tornado==4.1 tornadostreamform websocket-client
 pip3 install jsonpickle oyaml psutil pexpect requests
-pip3 install mido python-rtmidi patchage
+pip3 install mido python-rtmidi 
+#patchage not found for armbian as python package. Get it from apt
+apt-get -y install patchage
+
 #mutagen
 
 #************************************************
@@ -183,7 +191,8 @@ cd $ZYNTHIAN_DIR
 git clone -b "${ZYNTHIAN_SYS_BRANCH}" "${ZYNTHIAN_SYS_REPO}"
 
 # Install WiringPi
-$ZYNTHIAN_RECIPE_DIR/install_wiringpi.sh
+#$ZYNTHIAN_RECIPE_DIR/install_wiringpi.sh
+#Not needed on headless armbian
 
 # Zyncoder library
 cd $ZYNTHIAN_DIR
@@ -264,7 +273,7 @@ $ZYNTHIAN_SYS_DIR/scripts/update_zynthian_sys.sh
 systemctl daemon-reload
 systemctl enable dhcpcd
 systemctl enable avahi-daemon
-systemctl disable raspi-config
+#systemctl disable raspi-config
 systemctl disable cron
 systemctl disable rsyslog
 systemctl disable ntp
@@ -278,8 +287,9 @@ systemctl disable apt-daily.timer
 #systemctl mask polkit
 #systemctl disable serial-getty@ttyAMA0.service
 #systemctl disable sys-devices-platform-soc-3f201000.uart-tty-ttyAMA0.device
-systemctl enable backlight
-systemctl enable cpu-performance
+#Not applicable for armbian
+#systemctl disable backlight
+#systemctl disable cpu-performance
 systemctl enable splash-screen
 systemctl enable wifi-setup
 systemctl enable jack2
