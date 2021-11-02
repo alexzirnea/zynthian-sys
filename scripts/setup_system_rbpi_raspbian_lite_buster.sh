@@ -166,6 +166,7 @@ fi
 
 #Needed for python packages build?
 pip3 install wheel
+pip  install wheel
 pip3 install tornado==4.1 tornadostreamform websocket-client
 pip3 install jsonpickle oyaml psutil pexpect requests
 pip3 install mido python-rtmidi 

@@ -120,13 +120,9 @@ else
 fi
 
 if [ "$hw_architecture" = "armv7l" ]; then
-	# default is: RPi3
-	CPU="-mcpu=cortex-a53 -mtune=cortex-a53"
-	FPU="-mfpu=neon-fp-armv8 -mneon-for-64bits"
-	if [[ "$rbpi_version" =~ [2] ]]; then
-		CPU="-mcpu=cortex-a7 -mtune=cortex-a7"
-		FPU="-mfpu=neon-vfpv4"
-	fi
+	#Alwinner H3 SoC
+	CPU="-mcpu=cortex-a7 -mtune=cortex-a7"
+	FPU="-mfpu=neon-vfpv4"
 	#CPU="${CPU} -Ofast" #Breaks mod-ttymidi build
 	FPU="${FPU} -mfloat-abi=hard -mlittle-endian -munaligned-access -mvectorize-with-neon-quad -ftree-vectorize"
 	CFLAGS_UNSAFE="-funsafe-loop-optimizations -funsafe-math-optimizations -ffast-math"
