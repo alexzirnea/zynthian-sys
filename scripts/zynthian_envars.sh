@@ -21,28 +21,28 @@
 # For a full copy of the GNU General Public License see the LICENSE.txt file.
 # ****************************************************************************
 
-export ZYNTHIAN_KIT_VERSION="V4"
+export ZYNTHIAN_KIT_VERSION="Custom"
 
 #Audio Config
-export SOUNDCARD_NAME="HifiBerry DAC+ ADC PRO"
-export SOUNDCARD_CONFIG="dtoverlay=hifiberry-dacplusadcpro"
-export SOUNDCARD_MIXER="Digital Left,ADC Left,Digital Right,ADC Right,ADC Left Input,ADC Right Input"
-export JACKD_OPTIONS="-P 70 -t 2000 -s -d alsa -d hw:sndrpihifiberry -r 44100 -p 256 -n 2 -X raw"
+export SOUNDCARD_NAME="Generic USB device"
+export SOUNDCARD_CONFIG=""
+export SOUNDCARD_MIXER="Speaker Left,Speaker Right"
+export JACKD_OPTIONS="-P 70 -t 2000 -s -d alsa -d hw:2 -r 44100 -p 256 -n 2 -X raw"
 
 #Display Config
-export DISPLAY_NAME="ZynScreen 3.5 (v1)"
-export DISPLAY_CONFIG="dtoverlay=piscreen2r-notouch,rotate=270\ndtoverlay=ads7846,speed=2000000,cs=1,penirq=17,penirq_pull=2,swapxy=1,xohms=100,pmax=255"
-export DISPLAY_WIDTH="480"
-export DISPLAY_HEIGHT="320"
-export FRAMEBUFFER="/dev/fb1"
+export DISPLAY_NAME="RPi-Display 2.8"
+export DISPLAY_CONFIG="dtoverlay=ili9341opizero,speed=48000000,rotate=270"
+export DISPLAY_WIDTH="320"
+export DISPLAY_HEIGHT="240"
+export FRAMEBUFFER="/dev/fb0"
 
 # Zynthian Wiring Config
-export ZYNTHIAN_WIRING_LAYOUT="MCP23017_ZynScreen"
-export ZYNTHIAN_WIRING_ENCODER_A="102,105,110,113"
-export ZYNTHIAN_WIRING_ENCODER_B="101,104,109,112"
-export ZYNTHIAN_WIRING_SWITCHES="100,103,108,111,106,107,114,115"
-export ZYNTHIAN_WIRING_MCP23017_INTA_PIN="2"
-export ZYNTHIAN_WIRING_MCP23017_INTB_PIN="7"
+export ZYNTHIAN_WIRING_LAYOUT="UART_ENCODERS"
+export ZYNTHIAN_WIRING_ENCODER_A="4,5,6,7"
+export ZYNTHIAN_WIRING_ENCODER_B="8,9,10,11"
+export ZYNTHIAN_WIRING_SWITCHES="0,1,2,3"
+export ZYNTHIAN_WIRING_MCP23017_INTA_PIN=""
+export ZYNTHIAN_WIRING_MCP23017_INTB_PIN=""
 
 # Zynthian Custom Switches
 export ZYNTHIAN_WIRING_CUSTOM_SWITCH_01="MIDI_PROG_CHANGE"
@@ -76,10 +76,10 @@ export ZYNTHIAN_UI_COLOR_TX="#ffffff"
 export ZYNTHIAN_UI_COLOR_ON="#ff0000"
 export ZYNTHIAN_UI_COLOR_PANEL_BG="#3a424d"
 export ZYNTHIAN_UI_FONT_FAMILY="Audiowide"
-export ZYNTHIAN_UI_FONT_SIZE="14"
-export ZYNTHIAN_UI_ENABLE_CURSOR="0"
-export ZYNTHIAN_UI_TOUCH_WIDGETS="0"
-export ZYNTHIAN_UI_RESTORE_LAST_STATE="1"
+export ZYNTHIAN_UI_FONT_SIZE="10"
+export ZYNTHIAN_UI_ENABLE_CURSOR="1"
+export ZYNTHIAN_UI_TOUCH_WIDGETS="1"
+export ZYNTHIAN_UI_RESTORE_LAST_STATE="0"
 export ZYNTHIAN_UI_SNAPSHOT_MIXER_SETTINGS="0"
 export ZYNTHIAN_UI_SWITCH_BOLD_MS="300"
 export ZYNTHIAN_UI_SWITCH_LONG_MS="2000"
