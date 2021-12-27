@@ -105,7 +105,7 @@ apt-get -y remove --purge isc-dhcp-client triggerhappy logrotate dphys-swapfile
 apt-get -y install systemd avahi-daemon dhcpcd-dbus usbutils exfat-utils
 ## usbmount not found on armbian
 apt-get -y install xinit xserver-xorg-video-fbdev x11-xserver-utils xinput libgl1-mesa-dri vnc4server 
-apt-get -y install xfwm4 xfce4-panel xdotool
+apt-get -y install xfwm4 xfce4-panel xdotool xserver-xorg-input-evdev xserver-xorg-input-mouse.
 #xfwm4-themes not found on armbian
 apt-get -y install wpasupplicant wireless-tools iw hostapd dnsmasq
 apt-get -y install firmware-atheros firmware-realtek atmel-firmware firmware-misc-nonfree
