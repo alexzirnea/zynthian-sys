@@ -1,0 +1,13 @@
+
+verbosity=1
+bootlogo=false
+console=both
+disp_mode=1920x1080p60
+overlay_prefix=sun8i-h3
+rootdev=UUID=bca5d7e8-0c39-4a40-a387-03b25de4216d
+rootfstype=ext4
+param_spidev_spi_bus=0
+extraargs="fbcon=map:1"
+overlays=spi-spidev uart1
+user_overlays=ili9341opizero
+usbstoragequirks=0x2537:0x1066:u,0x2537:0x1068:u

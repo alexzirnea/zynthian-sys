@@ -29,6 +29,7 @@ fi
 # Disable first_boot service
 systemctl disable first_boot
 
+echo 'First boot setup done' > $ZYNTHIAN_SYS_DIR/first_boot_setup
+
 # Resize partition
-# Skip partition resizing, for now.
-#$ZYNTHIAN_SYS_DIR/scripts/rpi-wiggle.sh
+$ZYNTHIAN_SYS_DIR/scripts/rpi-wiggle.sh

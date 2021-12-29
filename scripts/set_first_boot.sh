@@ -25,10 +25,9 @@ done
 echo "Cleaning shell history ..."
 cat /dev/null > ~/.bash_history && history -c && history -w
 
-# Continue execution.
 # Message
-#echo "The system is going to halt. Extract the SD card and dump the image."
-#sleep 3
+echo "The system is going to halt. Extract the SD card and dump the image."
+sleep 3
 
 # Power Off
-#poweroff   
+poweroff   

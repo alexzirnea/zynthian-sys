@@ -140,6 +140,6 @@ cat /dev/null > ~/.bash_history && history -c && history -w
 # Enable first-boot service => It's already enabled!
 #------------------------------------------------------------------------------
 
-#./set_first_boot.sh
+./set_first_boot.sh
 
 #------------------------------------------------------------------------------

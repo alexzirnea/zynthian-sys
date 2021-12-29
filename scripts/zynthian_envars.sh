@@ -119,6 +119,14 @@ else
 	fi
 fi
 
+#Check if running under armbian by searching for the file below
+armbian_file=/etc/armbian-release
+if [ -f "$armbian_file" ]; then
+    under_armbian=true
+else 
+	under_armbian=false
+fi
+
 if [ "$hw_architecture" = "armv7l" ]; then
 	#Alwinner H3 SoC
 	CPU="-mcpu=cortex-a7 -mtune=cortex-a7"
@@ -133,6 +141,7 @@ export CFLAGS="${CPU} ${FPU}"
 export CXXFLAGS=${CFLAGS}
 export CFLAGS_UNSAFE=""
 export RASPI=true
+export ARMBIAN_OS=$under_armbian
 #echo "Hardware Architecture: ${hw_architecture}"
 #echo "Hardware Model: ${rbpi_version}"
 

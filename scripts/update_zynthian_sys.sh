@@ -63,9 +63,16 @@ function custom_config {
 		done
 	fi
 	if [ -d "boot" ]; then
-		for file in boot/* ; do
-			cp -a "$file" /boot
-		done
+		if [ "$ARMBIAN_OS" = true ]; then
+		#Use armbian custom boot directory
+			for file in armbian/boot/* ; do
+				cp -a "$file" /boot
+			done
+		else
+			for file in boot/* ; do
+				cp -a "$file" /boot
+			done
+		fi	
 	fi
 	if [ -d "config" ]; then
 		for file in config/* ; do
@@ -374,9 +381,12 @@ fi
 if [ ! -d "/etc/X11/xorg.conf.d" ]; then
 	mkdir /etc/X11/xorg.conf.d
 fi
-cp -a $ZYNTHIAN_SYS_DIR/etc/X11/xorg.conf.d/99-fbdev.conf /etc/X11/xorg.conf.d
-sed -i -e "s/#FRAMEBUFFER#/$FRAMEBUFFER_ESC/g" /etc/X11/xorg.conf.d/99-fbdev.conf
-
+if [ "$ARMBIAN_OS" = false ]; then
+	cp -a $ZYNTHIAN_SYS_DIR/etc/X11/xorg.conf.d/99-fbdev.conf /etc/X11/xorg.conf.d
+	sed -i -e "s/#FRAMEBUFFER#/$FRAMEBUFFER_ESC/g" /etc/X11/xorg.conf.d/99-fbdev.conf
+else 
+	cp -a $ZYNTHIAN_SYS_DIR/armbian/etc/X11/xorg.conf.d/50-fbtft.conf /etc/X11/xorg.conf.d
+fi
 # Copy fonts to system directory
 rsync -r --del $ZYNTHIAN_UI_DIR/fonts/* /usr/share/fonts/truetype
 

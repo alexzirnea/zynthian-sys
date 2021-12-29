@@ -81,7 +81,7 @@ $ZYNTHIAN_RECIPE_DIR/install_gxdistortionplus.sh
 #$ZYNTHIAN_RECIPE_DIR/install_padthv1.sh
 #$ZYNTHIAN_RECIPE_DIR/install_distrho_ports.sh
 #$ZYNTHIAN_RECIPE_DIR/install_dpf_plugins.sh
-$ZYNTHIAN_RECIPE_DIR/install_foo-yc20.sh
+#$ZYNTHIAN_RECIPE_DIR/install_foo-yc20.sh
 $ZYNTHIAN_RECIPE_DIR/install_raffo.sh
 $ZYNTHIAN_RECIPE_DIR/install_triceratops.sh
 $ZYNTHIAN_RECIPE_DIR/install_swh.sh

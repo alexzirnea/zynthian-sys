@@ -57,17 +57,23 @@ apt-get -y update --allow-releaseinfo-change
 apt-get -y dist-upgrade
 
 # Install required dependencies if needed
-apt-get -y install apt-utils apt-transport-https rpi-update sudo software-properties-common parted dirmngr rpi-eeprom gpgv
+if [ "$ARMBIAN_OS" = true ]; then
+    apt-get -y install apt-utils apt-transport-https sudo software-properties-common parted dirmngr gpgv
+else
+	apt-get -y install apt-utils apt-transport-https rpi-update sudo software-properties-common parted dirmngr rpi-eeprom gpgv
+fi
+
 #htpdate
 
 # Adjust System Date/Time
 #htpdate -s www.pool.ntp.org wikipedia.org google.com
 
 # Update Firmware
-if [ "$ZYNTHIAN_INCLUDE_RPI_UPDATE" == "yes" ]; then
-    rpi-update
+if [ "$ARMBIAN_OS" = false ]; then
+	if [ "$ZYNTHIAN_INCLUDE_RPI_UPDATE" == "yes" ]; then
+    	rpi-update
+	fi
 fi
-
 #------------------------------------------------
 # Add Repositories
 #------------------------------------------------
@@ -118,7 +124,7 @@ apt-get -y install firmware-atheros firmware-realtek atmel-firmware firmware-mis
 
 # CLI Tools
 apt-get -y install psmisc tree joe nano vim p7zip-full i2c-tools
-#raspi-config not fount on armbian
+#raspi-config not found on armbian
 apt-get -y install fbi scrot mpg123  mplayer xloadimage imagemagick fbcat abcmidi
 apt-get -y install evtest libts-bin # touchscreen tools
 #apt-get install python-smbus (i2c with python)
@@ -192,8 +198,11 @@ cd $ZYNTHIAN_DIR
 git clone -b "${ZYNTHIAN_SYS_BRANCH}" "${ZYNTHIAN_SYS_REPO}"
 
 # Install WiringPi
-#$ZYNTHIAN_RECIPE_DIR/install_wiringpi.sh
-#Not needed on headless armbian
+if [ "$ARMBIAN_OS" = false ]; then
+
+	$ZYNTHIAN_RECIPE_DIR/install_wiringpi.sh
+
+fi
 
 # Zyncoder library
 cd $ZYNTHIAN_DIR
@@ -305,8 +314,10 @@ echo "source $ZYNTHIAN_CONFIG_DIR/zynthian_envars.sh" >> /root/.bashrc
 # => Shell & Login Config
 echo "source $ZYNTHIAN_SYS_DIR/etc/profile.zynthian" >> /root/.profile
 
-# On first boot, resize SD partition, regenerate keys, etc.
-$ZYNTHIAN_SYS_DIR/scripts/set_first_boot.sh
+if ! [ -f "$ZYNTHIAN_SYS_DIR/first_boot_setup" ]; then
+    # On first boot, resize SD partition, regenerate keys, etc.
+	$ZYNTHIAN_SYS_DIR/scripts/set_first_boot.sh
+fi
 
 
 #************************************************
