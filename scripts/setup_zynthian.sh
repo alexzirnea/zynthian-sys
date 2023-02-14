@@ -42,8 +42,9 @@ fi
 cd zynthian-sys/scripts
 
 if [ "$1" = "wiggle" ] || [ ! -f ~/.wiggled ]; then
-	echo `date` >  ~/.wiggled
-	./rpi-wiggle.sh
+	#echo `date` >  ~/.wiggled
+	#./rpi-wiggle.sh
+	echo "skipped wiggle"
 else
 	#./setup_system_rbpi_minibian_jessie.sh
 	#./setup_system_rbpi_raspbian_lite_stretch.sh
