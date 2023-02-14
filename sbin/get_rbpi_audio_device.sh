@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 res=`/usr/bin/aplay -l | grep "bcm2835 Headphones"`
 if [ "$res" != "" ]; then

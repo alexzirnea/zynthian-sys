@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 #LV2 Standalone Plugin Host
 

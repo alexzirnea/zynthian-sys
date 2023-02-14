@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # Alsa Mixer Settings
 if [ "$SOUNDCARD_NAME" == "Z2 ADAC" ] || [ "$SOUNDCARD_NAME" == "ZynADAC" ] || [ "$SOUNDCARD_NAME" == "HifiBerry DAC+ ADC PRO" ]; then

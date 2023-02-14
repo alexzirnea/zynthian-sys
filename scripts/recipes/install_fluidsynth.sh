@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # fluidsynth
 cd $ZYNTHIAN_SW_DIR

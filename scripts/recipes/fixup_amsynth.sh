@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 cd /usr/lib/arm-linux-gnueabihf/lv2/amsynth.lv2
 

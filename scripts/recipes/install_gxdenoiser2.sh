@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # install_gxdenoiser2.sh
 cd $ZYNTHIAN_PLUGINS_SRC_DIR

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # install_mod-pitchshifter.sh
 cd $ZYNTHIAN_PLUGINS_SRC_DIR

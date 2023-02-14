@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # Install prebuilt binaries of DISTRHO ports + Helm
 

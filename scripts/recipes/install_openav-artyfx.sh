@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # openav-artyfx.sh
 

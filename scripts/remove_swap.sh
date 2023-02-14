@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 dphys-swapfile swapoff
 dphys-swapfile uninstall

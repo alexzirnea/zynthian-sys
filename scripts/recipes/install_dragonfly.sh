@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 set -e
 
 #REQUIRE: libx11-dev libgl1-mesa-dev libjack-jackd2-dev

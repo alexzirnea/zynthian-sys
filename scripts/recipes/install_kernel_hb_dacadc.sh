@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # Install Kernel 4.18 from HifiBerry (required by DAC+ ADC)
 

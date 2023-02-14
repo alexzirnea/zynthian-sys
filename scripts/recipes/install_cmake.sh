@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 VERSION="3.24.2"
 

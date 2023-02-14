@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 HAT_PRODUCT_FILE="/proc/device-tree/hat/product"
 #HAT_PRODUCT_FILE="/proc/device-tree/soc/firmware/compatible"
 HAT_PRODUCT_MATCH="EPDF"

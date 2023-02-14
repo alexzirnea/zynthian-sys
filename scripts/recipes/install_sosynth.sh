@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # sosynth.sh
 PLUGIN_DIR="So-synth-LV2-upstream-1.5"

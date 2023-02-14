@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 source /zynthian/config/zynthian_envars.sh
 

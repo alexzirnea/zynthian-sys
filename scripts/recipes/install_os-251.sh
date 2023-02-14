@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # LV2 Otokusa OS-251
 

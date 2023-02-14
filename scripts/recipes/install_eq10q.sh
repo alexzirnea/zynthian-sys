@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # EQ10q
 cd $ZYNTHIAN_PLUGINS_SRC_DIR

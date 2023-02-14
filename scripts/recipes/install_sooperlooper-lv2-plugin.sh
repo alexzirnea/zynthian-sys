@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # install_sooperlooper-lv2-plugin.sh
 cd $ZYNTHIAN_PLUGINS_SRC_DIR

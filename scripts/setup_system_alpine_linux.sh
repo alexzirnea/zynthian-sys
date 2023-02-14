@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 #******************************************************************************
 # ZYNTHIAN PROJECT: Zynthian Setup Script
 # 

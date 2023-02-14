@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 cd $ZYNTHIAN_PLUGINS_SRC_DIR
 sudo apt-get install --no-install-recommends --yes build-essential libcairo2-dev libxkbcommon-x11-dev libxkbcommon-dev libxcb-cursor-dev libxcb-keysyms1-dev libxcb-util0-dev fonts-lato
 git clone https://github.com/surge-synthesizer/surge.git

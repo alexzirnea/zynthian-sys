@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # phantomjs
 cd $ZYNTHIAN_SW_DIR 

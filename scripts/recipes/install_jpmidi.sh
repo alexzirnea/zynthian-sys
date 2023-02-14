@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 cd $ZYNTHIAN_SW_DIR
 if [ ! -d "jpmidi-0.21" ]; then

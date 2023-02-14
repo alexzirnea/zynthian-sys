@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # raffo.lv2
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 #******************************************************************************
 # ZYNTHIAN PROJECT: Setup Zynthian Plugins from scratch for RBPi
 # 

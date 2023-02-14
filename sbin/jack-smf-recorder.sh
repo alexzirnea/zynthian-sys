@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # Configure capture directory
 if mountpoint -q -- "/media/usb0"; then

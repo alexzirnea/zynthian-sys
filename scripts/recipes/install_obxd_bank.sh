@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 #OBXD presets bank
 cd $ZYNTHIAN_PLUGINS_SRC_DIR

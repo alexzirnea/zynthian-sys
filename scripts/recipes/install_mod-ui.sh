@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # mod-ui
 cd $ZYNTHIAN_SW_DIR

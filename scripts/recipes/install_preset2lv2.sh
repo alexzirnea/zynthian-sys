@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # preset2lv2: convert native presets to LV2
 cd $ZYNTHIAN_SW_DIR

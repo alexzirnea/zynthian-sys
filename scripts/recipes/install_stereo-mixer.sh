@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # stereo-mixer.lv2
 cd $ZYNTHIAN_PLUGINS_SRC_DIR

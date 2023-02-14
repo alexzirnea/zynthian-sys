@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 cd $ZYNTHIAN_PLUGINS_SRC_DIR
 if [ -d "reMID.lv2" ]; then

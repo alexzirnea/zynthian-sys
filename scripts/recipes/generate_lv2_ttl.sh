@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # Build and install lv2_ttl_generator
 cd $ZYNTHIAN_PLUGINS_SRC_DIR/helm/builds/linux/LV2

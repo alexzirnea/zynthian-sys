@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # linuxsampler
 set -ex

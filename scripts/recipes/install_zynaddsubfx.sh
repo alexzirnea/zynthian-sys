@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # Don't use environment optimizations
 #unset CFLAGS

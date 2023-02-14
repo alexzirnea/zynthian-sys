@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 #Install jack_delay utility
 cd $ZYNTHIAN_SW_DIR

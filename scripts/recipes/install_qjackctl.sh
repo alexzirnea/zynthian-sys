@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 res=`dpkg -s qjackctl 2>&1 | grep "Status:"`
 if [ "$res" == "Status: install ok installed" ]; then

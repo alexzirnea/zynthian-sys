@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # install_SWH
 cd $ZYNTHIAN_PLUGINS_SRC_DIR

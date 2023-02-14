@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 cd ${ZYNTHIAN_PLUGINS_SRC_DIR}
 sudo apt-get install --yes libasound2-dev libxcursor-dev libxinerama-dev libxrandr-dev freeglut3-dev libjack-jackd2-dev
 git clone https://github.com/jatinchowdhury18/AnalogTapeModel.git AnalogTapeModel

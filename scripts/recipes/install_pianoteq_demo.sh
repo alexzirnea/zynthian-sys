@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 export PIANOTEQ_INSTALL_FILENAME="pianoteq_stage_linux_trial_v754.7z"
 

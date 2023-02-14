@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # Adjust Compiler options
 if [ ${MACHINE_HW_NAME} = "armv7l" ]; then

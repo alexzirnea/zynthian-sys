@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 
 pip3 install tornado_xstatic xstatic

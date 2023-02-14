@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # Stop zynthian services
 echo "Stopping zynthian services..."

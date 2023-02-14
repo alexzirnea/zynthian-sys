@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 #******************************************************************************
 # ZYNTHIAN PROJECT: Script for Updating a System Image (SD image)
 # 

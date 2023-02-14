@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # jack-smf-utils => jack MID-file playback & recording
 cd $ZYNTHIAN_SW_DIR

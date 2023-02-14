@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 source "$ZYNTHIAN_SYS_DIR/scripts/zynthian_envars_extended.sh"
 

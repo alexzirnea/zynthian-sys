@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 export MOD_SCREENSHOT_JS=$ZYNTHIAN_SW_DIR/mod-ui/screenshot.js
 export MOD_PHANTOM_BINARY=/usr/bin/phantomjs
