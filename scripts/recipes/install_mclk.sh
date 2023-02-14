@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # mclk.lv2
 cd $ZYNTHIAN_PLUGINS_SRC_DIR

@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # mod-utilities.lv2
 cd $ZYNTHIAN_PLUGINS_SRC_DIR

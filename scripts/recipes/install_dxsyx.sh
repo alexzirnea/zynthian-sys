@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # dxsyx
 cd $ZYNTHIAN_SW_DIR

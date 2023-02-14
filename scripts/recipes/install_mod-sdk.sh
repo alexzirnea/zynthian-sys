@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # mod-sdk
 cd $ZYNTHIAN_SW_DIR

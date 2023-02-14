@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 BOOT_CONFIG_FILE="/boot/zynthian_envars.sh"
 UPDATE_SYS_FLAG_FILE="/zynthian_update_sys"

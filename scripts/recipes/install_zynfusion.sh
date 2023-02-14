@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 apt-get install libgl1-mesa-swx11
 

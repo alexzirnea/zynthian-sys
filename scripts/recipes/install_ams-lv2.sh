@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # LV2 port of Alsa Modular Synth
 cd $ZYNTHIAN_PLUGINS_SRC_DIR

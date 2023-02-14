@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # qmidinet
 cd $ZYNTHIAN_SW_DIR

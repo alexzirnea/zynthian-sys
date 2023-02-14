@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 if [ -d lvtk ]; then
 	rm -rf lvtk

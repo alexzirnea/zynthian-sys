@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # Install noVNC web viewer
 

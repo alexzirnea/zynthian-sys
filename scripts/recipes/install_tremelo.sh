@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # Tremelo: Amplitude Sinoidal Modulation
 cd $ZYNTHIAN_PLUGINS_SRC_DIR

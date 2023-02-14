@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # Install X42 testsignal plugin
 

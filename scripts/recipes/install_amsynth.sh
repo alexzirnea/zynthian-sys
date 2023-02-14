@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # amsynth
 cd $ZYNTHIAN_SW_DIR

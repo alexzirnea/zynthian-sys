@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 cd ${ZYNTHIAN_PLUGINS_SRC_DIR}
 git clone https://gitlab.com/edwillys/simsam.git simsam.lv2
 cd simsam.lv2

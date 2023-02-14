@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 #******************************************************************************
 # ZYNTHIAN PROJECT: Update Zynthian Code
 # 

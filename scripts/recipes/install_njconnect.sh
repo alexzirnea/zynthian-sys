@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # njconnect
 cd $ZYNTHIAN_SW_DIR

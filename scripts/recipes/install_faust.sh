@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # Faust
 cd $ZYNTHIAN_SW_DIR

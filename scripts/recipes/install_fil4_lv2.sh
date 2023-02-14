@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 cd $ZYNTHIAN_PLUGINS_SRC_DIR
 if [ -d "fil4.lv2" ]; then

@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # LV2, lilv and Python bindings
 cd $ZYNTHIAN_SW_DIR

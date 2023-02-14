@@ -1,3 +1,3 @@
-#!/bin/ash
+#!/bin/bash
 
 /usr/local/bin/mod-host -i

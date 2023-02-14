@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 cd $ZYNTHIAN_PLUGINS_SRC_DIR
 if [ -d "XPolyMonk.lv2" ]; then

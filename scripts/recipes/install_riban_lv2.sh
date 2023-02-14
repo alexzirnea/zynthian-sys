@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # riban LV2 plugins
 cd $ZYNTHIAN_PLUGINS_SRC_DIR

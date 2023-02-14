@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # padthv1.lv2
 

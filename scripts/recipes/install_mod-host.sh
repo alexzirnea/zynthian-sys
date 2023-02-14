@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # Mod-Host
 cd $ZYNTHIAN_SW_DIR

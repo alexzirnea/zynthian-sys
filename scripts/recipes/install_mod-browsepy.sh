@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # Install dependencies
 pip3 install scandir backports.shutil-get-terminal-size

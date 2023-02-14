@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # Uninstall official wiringpi deb package
 apt-get -y remove wiringpi

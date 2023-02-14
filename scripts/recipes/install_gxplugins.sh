@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # install_gxplugins.sh
 cd $ZYNTHIAN_PLUGINS_SRC_DIR

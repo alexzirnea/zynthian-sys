@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # mutagen: audio file metadata
 cd $ZYNTHIAN_SW_DIR

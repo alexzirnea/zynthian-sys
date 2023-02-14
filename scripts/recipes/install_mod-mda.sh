@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # mod-mda.lv2
 cd $ZYNTHIAN_PLUGINS_SRC_DIR

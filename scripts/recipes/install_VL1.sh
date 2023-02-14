@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 builddir=vl1
 cd $ZYNTHIAN_PLUGINS_SRC_DIR
 if [ -d "$builddir" ]; then

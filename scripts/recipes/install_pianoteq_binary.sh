@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # This script is designed to work with the different
 # versions of Pianoteq binary packages. It tries to be

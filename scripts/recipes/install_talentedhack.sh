@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # TalentedHack LV2 plugin: Autotune
 cd $ZYNTHIAN_PLUGINS_SRC_DIR

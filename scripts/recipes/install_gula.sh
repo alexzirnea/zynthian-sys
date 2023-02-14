@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # install_gula.sh
 cd $ZYNTHIAN_PLUGINS_SRC_DIR

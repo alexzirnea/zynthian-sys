@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # Install Hylia - Host transport library for Ableton Link
 

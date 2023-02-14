@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # Install Pure data extra abl_link~ which allows sync with Ableton Link
 

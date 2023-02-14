@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # install_gxdistortionplus.sh
 cd $ZYNTHIAN_PLUGINS_SRC_DIR

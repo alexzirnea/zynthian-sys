@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # fluidplug
 cd $ZYNTHIAN_PLUGINS_SRC_DIR

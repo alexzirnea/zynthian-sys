@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 # Turn On Display Backlight
 function backlight_on() {
