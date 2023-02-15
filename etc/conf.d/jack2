@@ -1,0 +1,8 @@
+#!/sbin/openrc-run
+
+name=$RC_SVCNAME
+description="JACK2 Audio Server"
+supervisor="supervise-daemon"
+command="#JACKD_BIN_PATH#/jackd"
+command_args="#JACKD_OPTIONS#"
+supervise_daemon_args=" -e JACK_NO_AUDIO_RESERVATION=\"1\""

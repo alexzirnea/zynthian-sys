@@ -1,0 +1,10 @@
+#!/sbin/openrc-run
+
+name=$RC_SVCNAME
+description="Config-On-Boot Service"
+command=""
+command_args="#ZYNTHIAN_SYS_DIR#/sbin/config-on-boot.sh"
+
+depend() {
+	before jack2 
+}

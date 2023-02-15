@@ -1,0 +1,6 @@
+#!/sbin/openrc-run
+
+name=$RC_SVCNAME
+description="First Boot Script"
+command=""
+command_args="#ZYNTHIAN_SYS_DIR#/scripts/first_boot.sh"

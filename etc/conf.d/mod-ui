@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name=$RC_SVCNAME
+description="MOD-UI"
+supervisor="supervise-daemon"
+command=""
+command_args="#ZYNTHIAN_SW_DIR#/mod-ui/server.py"
+supervise_daemon_args=" -d #ZYNTHIAN_SW_DIR#/mod-ui -e MOD_DEVICE_WEBSERVER_PORT=\"8888\""
+
+depend() {
+	after browsepy 
+	need browsepy 
+}

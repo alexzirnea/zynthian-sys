@@ -1,0 +1,8 @@
+#!/sbin/openrc-run
+
+name=$RC_SVCNAME
+description="browsepy"
+supervisor="supervise-daemon"
+command="/usr/local/bin/browsepy"
+command_args="--directory #BROWSEPY_ROOT# --upload #BROWSEPY_ROOT#"
+supervise_daemon_args=" -d #BROWSEPY_ROOT# -e BROWSEPY_PORT=\"8081\""
