@@ -20,7 +20,7 @@ $ZYNTHIAN_SYS_DIR/sbin/fix_alsamixer_settings.sh
 $ZYNTHIAN_SYS_DIR/sbin/regenerate_keys.sh
 
 # Enable WIFI AutoAccessPoint (hostapd)
-systemctl unmask hostapd
+#systemctl unmask hostapd
 
 # Regenerate cache LV2
 cd $ZYNTHIAN_CONFIG_DIR/jalv
@@ -38,7 +38,7 @@ if [ -f "first_boot.$codebase.sh" ]; then
 fi
 
 # Disable first_boot service
-systemctl disable first_boot
+rc-update del first_boot
 
 # Resize partition
-$ZYNTHIAN_SYS_DIR/scripts/rpi-wiggle.sh
+#$ZYNTHIAN_SYS_DIR/scripts/rpi-wiggle.sh

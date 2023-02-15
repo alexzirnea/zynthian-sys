@@ -14,15 +14,15 @@ echo "A new webconf cookie secret will be generated on next request."
 rm -f "$ZYNTHIAN_CONFIG_DIR/webconf_cookie_secret.txt"
 
 # Regenerate System SSH keys
-echo "Removing current system SSH keys..."
-rm -f /etc/ssh/ssh_host_*
-echo "Generating new system SSH keys..."
+#echo "Removing current system SSH keys..."
+#rm -f /etc/ssh/ssh_host_*
+#echo "Generating new system SSH keys..."
 #DEBIAN_FRONTEND=noninteractive /usr/sbin/dpkg-reconfigure openssh-server
-ssh-keygen -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key
-ssh-keygen -N "" -t dsa -f /etc/ssh/ssh_host_dsa_key
-ssh-keygen -N "" -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key 
-echo "Restarting SSH server ..."
-systemctl restart ssh
+#ssh-keygen -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key
+#ssh-keygen -N "" -t dsa -f /etc/ssh/ssh_host_dsa_key
+#ssh-keygen -N "" -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key 
+#echo "Restarting SSH server ..."
+#systemctl restart ssh
 
 # Regenerate SSL certificate for Webconf
 SSL_CERT_DIR="$ZYNTHIAN_DIR/zynthian-webconf/cert"

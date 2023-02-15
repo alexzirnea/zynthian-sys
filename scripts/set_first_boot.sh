@@ -24,7 +24,7 @@ done
 
 # Clean history
 echo "Cleaning shell history..."
-cat /dev/null > ~/.bash_history && history -c && history -w
+cat /dev/null > ~/.ash_history && history -c && history -w
 
 # Removing user data files
 echo "Removing user data files..."
@@ -45,7 +45,7 @@ echo "nameserver 8.8.8.8" > /etc/resolv.conf
 
 # Add First Boot Script to /etc/rc.local
 echo "Enabling first boot service..."
-systemctl enable first_boot
+rc-update add first_boot
 
 # Message
 echo "The system is going to halt. Extract the SD card and dump the image."

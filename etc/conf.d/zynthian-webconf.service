@@ -1,0 +1,8 @@
+#!/sbin/openrc-run
+
+name=$RC_SVCNAME
+description="Zynthian Webconf"
+supervisor="supervise-daemon"
+command=""
+command_args="#ZYNTHIAN_DIR#/zynthian-webconf/zynthian_webconf.sh"
+supervise_daemon_args=" -d #ZYNTHIAN_DIR#/zynthian-webconf -e ZYNTHIAN_CONFIG_DIR=\"#ZYNTHIAN_CONFIG_DIR#\""

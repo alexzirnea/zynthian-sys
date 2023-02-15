@@ -92,13 +92,13 @@ function run_flag_actions() {
 			send_osc 1370 /CUIA/LAST_STATE_ACTION
 			sleep 1
 			echo "Restarting zynthian service..."
-			systemctl restart zynthian
+			rc-service zynthian restart
 		fi
 
 		if [ -f $RESTART_WEBCONF_FLAGFILE ]; then
 			clean_restart_webconf_flag
 			echo "Restarting zynthian-webconf service..."
-			systemctl restart zynthian-webconf
+			rc-service zynthian-webconf restart
 		fi
 	fi
 }

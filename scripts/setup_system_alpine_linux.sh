@@ -99,11 +99,11 @@ apk add -y sudo parted gpgv
 
 # System
 #apk -y remove --purge isc-dhcp-client triggerhappy logrotate dphys-swapfile
-apk add -y avahi-daemon dhcpcd-dbus usbutils usbmount exfat-utils
+apk add -y dhcpcd-dbus usbutils exfat-utils
 apk add -y xinit xserver-xorg-video-fbdev x11-xserver-utils xinput libgl1-mesa-dri vnc4server 
 apk add -y xfwm4 xfwm4-themes xfce4-panel xdotool cpufrequtils
 
-apk add -y wpasupplicant wireless-tools iw hostapd dnsmasq
+apk add -y wireless-tools iw hostapd dnsmasq
 apk add -y firmware-brcm80211 firmware-atheros firmware-realtek atmel-firmware firmware-misc-nonfree
 #firmware-ralink
 
@@ -112,9 +112,9 @@ apk add -y firmware-brcm80211 firmware-atheros firmware-realtek atmel-firmware f
 #ln -s /usr/lib/arm-linux-gnueabihf/xorg/modules/drivers/fbturbo_drv.so /usr/lib/xorg/modules/drivers
 
 # CLI Tools
-apk add -y raspi-config psmisc tree joe nano vim p7zip-full i2c-tools ddcutil
+apk add -y psmisc tree joe nano vim p7zip i2c-tools ddcutil
 apk add -y fbi scrot mpg123  mplayer xloadimage imagemagick fbcat abcmidi
-apk add -y evtest libts-bin # touchscreen tools
+apk add -y evtest libtsm libtsm-dev # touchscreen tools
 #apk install python-smbus (i2c with python)
 
 
@@ -129,33 +129,33 @@ apk add -y evtest libts-bin # touchscreen tools
 #------------------------------------------------
 
 #Tools
-apk add -y git swig subversion pkg-config autoconf automake premake gettext intltool libtool libtool-bin cmake cmake-curses-gui flex bison ngrep qt5-qmake qt4-qmake qt5-default gobjc++ ruby rake xsltproc vorbis-tools zenity
+apk add -y git swig subversion pkgconf autoconf automake gettext intltool libtool cmake flex bison ngrep qt5-base qt5-base-dev libstdc++ ruby ruby-rake libxslt vorbis-tools zenity
 
 # AV Libraries => WARNING It should be changed on every new debian version!!
-apk add -y libavcodec58 libavformat58 libavutil56 libavresample4 libavformat-dev libavcodec-dev
+apk add -y ffmpeg-dev ffmpeg-libs
 
 # Libraries
-apk add -y libfftw3-dev libmxml-dev zlib1g-dev fluid libfltk1.3-dev \
-libfltk1.3-compat-headers libncurses5-dev liblo-dev dssi-dev libjpeg-dev libxpm-dev libcairo2-dev libglu1-mesa-dev \
-libasound2-dev dbus-x11 jackd2 libjack-jackd2-dev a2jmidid laditools liblash-compat-dev libffi-dev \
-fontconfig-config libfontconfig1-dev libxft-dev libexpat-dev libglib2.0-dev libgettextpo-dev libsqlite3-dev \
-libglibmm-2.4-dev libeigen3-dev libsndfile-dev libsamplerate-dev libarmadillo-dev libreadline-dev \
-lv2-c++-tools libxi-dev libgtk2.0-dev libgtkmm-2.4-dev liblrdf-dev libboost-system-dev libzita-convolver-dev \
-libzita-resampler-dev fonts-roboto libxcursor-dev libxinerama-dev mesa-common-dev libgl1-mesa-dev \
-libfreetype6-dev  libswscale-dev  libqt4-dev qtbase5-dev qtdeclarative5-dev libcanberra-gtk-module \
-libcanberra-gtk3-module libxcb-cursor-dev libgtk-3-dev libxcb-util0-dev libxcb-keysyms1-dev libxcb-xkb-dev \
-libxkbcommon-x11-dev libssl-dev libmpg123-0 libmp3lame0
+apk add -y libfftw3-dev libxml2-dev zlib-dev fltk-fluid libfltk \
+ncurses-dev ncurses ncurses5-libs liblo-dev libjpeg jpeg-dev libxpm-dev cairo-dev mesa-dev mesa-gl \
+alsa-lib-dev dbus-x11 jack jack-dev a2jmidid libffi-dev \
+fontconfig fontconfig-dev libxft-dev expat-dev glib-dev gettext-dev sqlite-dev sqlite-libs \
+glibmm-dev eigen-dev libsndfile-dev libsamplerate-dev armadillo readline-dev \
+libxi-dev gtk+2.0 gtk+2.0-dev gtkmm lrdf-static boost-dev zita-convolver \
+zita-resampler font-roboto ttf-roboto libxcursor-dev libxinerama-dev mesa-dev mesa-gl libgl1-mesa-dev \
+freetype-dev freetype  ffmpeg4  libqt4-dev qt5-qtbase-dev qt5-qtdeclarative-dev libcanberra \
+libcanberra-gtk3 xcb-util-cursor-dev gtk+3.0-dev gtk+3.0 libxcb-dev libxcb xcb-util xcb-util-renderutil-dev libxcb-keysyms1-dev libxcb-xkb-dev \
+libxkbcommon-x11 openssl-dev mpg123 lame
 
 #libjack-dev-session
 #non-ntk-dev
 #libgd2-xpm-dev
 
 # Python
-apk add -y python python-dev cython python-dbus python-setuptools
+#apk add -y python python-dev cython python-dbus python-setuptools
 apk add -y python3 python3-dev cython3 python3-cffi python3-tk python3-dbus python3-mpmath python3-pil python3-pil.imagetk python3-setuptools python3-pyqt4 python3-numpy-dev python3-evdev 2to3
 
 if [ "$ZYNTHIAN_INCLUDE_PIP" == "yes" ]; then
-    apk add -y python-pip python3-pip
+    apk add -y py2-pip py3-pip
 fi
 
 pip3 install tornado==4.1 tornadostreamform websocket-client
@@ -286,9 +286,9 @@ rc-update add zynthian-webconf
 rc-update add zynthian-config-on-boot
 
 # Setup loading of Zynthian Environment variables ...
-echo "source $ZYNTHIAN_SYS_DIR/scripts/zynthian_envars_extended.sh" >> /root/.bashrc
+echo "source $ZYNTHIAN_SYS_DIR/scripts/zynthian_envars_extended.sh" >> /etc/profile
 # => Shell & Login Config
-echo "source $ZYNTHIAN_SYS_DIR/etc/profile.zynthian" >> /root/.profile
+#echo "source $ZYNTHIAN_SYS_DIR/etc/profile.zynthian" >> /root/.profile
 
 # On first boot, resize SD partition, regenerate keys, etc.
 $ZYNTHIAN_SYS_DIR/scripts/set_first_boot.sh
@@ -301,7 +301,7 @@ $ZYNTHIAN_SYS_DIR/scripts/set_first_boot.sh
 #************************************************
 
 # Install some extra packages:
-apk add -y jack-midi-clock midisport-firmware
+#apk add -y jack-midi-clock midisport-firmware
 
 # Install Jack2
 $ZYNTHIAN_RECIPE_DIR/install_jack2.sh
@@ -389,10 +389,10 @@ $ZYNTHIAN_RECIPE_DIR/install_mod-ttymidi.sh
 
 # Install ZynAddSubFX
 #$ZYNTHIAN_RECIPE_DIR/install_zynaddsubfx.sh
-apk add -y zynaddsubfx
+#apk add -y zynaddsubfx
 
 # Install Fluidsynth & SF2 SondFonts
-apk add -y fluidsynth libfluidsynth-dev fluid-soundfont-gm fluid-soundfont-gs timgm6mb-soundfont
+apk add -y fluidsynth
 # Create SF2 soft links
 ln -s /usr/share/sounds/sf2/*.sf2 $ZYNTHIAN_DATA_DIR/soundfonts/sf2
 
@@ -404,11 +404,11 @@ ln -s /usr/share/sounds/sf2/*.sf2 $ZYNTHIAN_DATA_DIR/soundfonts/sf2
 
 # Install Sfizz (SFZ player)
 #$ZYNTHIAN_RECIPE_DIR/install_sfizz.sh
-apk add -y sfizz
+#apk add -y sfizz
 
 # Install Linuxsampler
 #$ZYNTHIAN_RECIPE_DIR/install_linuxsampler_stable.sh
-apk add -y linuxsampler gigtools
+#apk add -y linuxsampler gigtools
 
 # Install Fantasia (linuxsampler Java GUI)
 #PORTREMOVED$ZYNTHIAN_RECIPE_DIR/install_fantasia.sh
@@ -429,15 +429,15 @@ $ZYNTHIAN_RECIPE_DIR/install_pianoteq_demo.sh
 $ZYNTHIAN_RECIPE_DIR/install_aeolus.sh
 
 # Install Mididings (MIDI route & filter)
-apk add -y mididings
+#apk add -y mididings
 
 # Install Pure Data stuff
-apk add -y puredata puredata-core puredata-utils python3-yaml \
-pd-lua pd-moonlib pd-pdstring pd-markex pd-iemnet pd-plugin pd-ekext pd-import pd-bassemu pd-readanysf pd-pddp \
-pd-zexy pd-list-abs pd-flite pd-windowing pd-fftease pd-bsaylor pd-osc pd-sigpack pd-hcs pd-pdogg pd-purepd \
-pd-beatpipe pd-freeverb pd-iemlib pd-smlib pd-hid pd-csound pd-aubio pd-earplug pd-wiimote pd-pmpd pd-motex \
-pd-arraysize pd-ggee pd-chaos pd-iemmatrix pd-comport pd-libdir pd-vbap pd-cxc pd-lyonpotpourri pd-iemambi \
-pd-pdp pd-mjlib pd-cyclone pd-jmmmp pd-3dp pd-boids pd-mapping pd-maxlib
+#apk add -y puredata puredata-core puredata-utils python3-yaml \
+#pd-lua pd-moonlib pd-pdstring pd-markex pd-iemnet pd-plugin pd-ekext pd-import pd-bassemu pd-readanysf pd-pddp \
+#pd-zexy pd-list-abs pd-flite pd-windowing pd-fftease pd-bsaylor pd-osc pd-sigpack pd-hcs pd-pdogg pd-purepd \
+#pd-beatpipe pd-freeverb pd-iemlib pd-smlib pd-hid pd-csound pd-aubio pd-earplug pd-wiimote pd-pmpd pd-motex \
+#pd-arraysize pd-ggee pd-chaos pd-iemmatrix pd-comport pd-libdir pd-vbap pd-cxc pd-lyonpotpourri pd-iemambi \
+#pd-pdp pd-mjlib pd-cyclone pd-jmmmp pd-3dp pd-boids pd-mapping pd-maxlib
 
 mkdir /root/Pd
 mkdir /root/Pd/externals
@@ -467,8 +467,8 @@ cd $ZYNTHIAN_SYS_DIR/scripts
 #------------------------------------------------
 # Install Ableton Link Support
 #------------------------------------------------
-$ZYNTHIAN_RECIPE_DIR/install_hylia.sh
-$ZYNTHIAN_RECIPE_DIR/install_pd_extra_abl_link.sh
+#$ZYNTHIAN_RECIPE_DIR/install_hylia.sh
+#$ZYNTHIAN_RECIPE_DIR/install_pd_extra_abl_link.sh
 
 #************************************************
 #------------------------------------------------
