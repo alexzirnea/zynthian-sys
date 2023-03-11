@@ -35,7 +35,7 @@ if [ ! -d "zynthian-sys" ]; then
 #	apt-get update
 #	apt-get -y install apt-utils
 #	apt-get -y install sudo git parted screen
-	apk add git parted screen
+	yes | apk add git parted screen
 	git clone https://github.com/zynthian/zynthian-sys.git
 fi
 
