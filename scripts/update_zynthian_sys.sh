@@ -466,8 +466,8 @@ sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 echo "" > /etc/network/interfaces
 
 # User Config (root)
-# => ash
-sed -i -e "s/config\/zynthian_envars.sh/zynthian-sys\/scripts\/zynthian_envars_extended.sh \> \/dev\/null 2\>\&1/g" /etc/profile
+# => bash
+sed -i -e "s/config\/zynthian_envars.sh/zynthian-sys\/scripts\/zynthian_envars_extended.sh \> \/dev\/null 2\>\&1/g" /root/.bashrc
 
 # => ZynAddSubFX Config
 if [ -f $ZYNTHIAN_SYS_DIR/etc/zynaddsubfxXML.cfg ]; then
@@ -623,7 +623,7 @@ else
 fi
 
 if [ -f "$ZYNTHIAN_MY_DATA_DIR/scripts/update_zynthian_sys.sh" ]; then
-	ash "$ZYNTHIAN_MY_DATA_DIR/scripts/update_zynthian_sys.sh"
+	bash "$ZYNTHIAN_MY_DATA_DIR/scripts/update_zynthian_sys.sh"
 fi
 
 run_flag_actions

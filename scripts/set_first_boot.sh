@@ -24,7 +24,7 @@ done
 
 # Clean history
 echo "Cleaning shell history..."
-cat /dev/null > ~/.ash_history && history -c && history -w
+cat /dev/null > ~/.bash_history && history -c && history -w
 
 # Removing user data files
 echo "Removing user data files..."

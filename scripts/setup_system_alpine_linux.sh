@@ -286,7 +286,7 @@ rc-update add zynthian-webconf
 rc-update add zynthian-config-on-boot
 
 # Setup loading of Zynthian Environment variables ...
-echo "source $ZYNTHIAN_SYS_DIR/scripts/zynthian_envars_extended.sh" >> /etc/profile
+echo "source $ZYNTHIAN_SYS_DIR/scripts/zynthian_envars_extended.sh" >> /root/.bashrc
 # => Shell & Login Config
 #echo "source $ZYNTHIAN_SYS_DIR/etc/profile.zynthian" >> /root/.profile
 

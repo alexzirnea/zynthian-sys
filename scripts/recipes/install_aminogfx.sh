@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Node.js multiversion framwork
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | ash
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 
 # Required libraries
 #apt-get install libavformat-dev libswscale-dev libavcodec-dev

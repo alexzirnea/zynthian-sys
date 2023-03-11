@@ -38,7 +38,7 @@ RECIPES_UPDATE_DIR="$ZYNTHIAN_SYS_DIR/scripts/recipes.update"
 echo "Executing custom update recipes..."
 for r in $RECIPES_UPDATE_DIR.${LINUX_OS_VERSION}/*.sh; do
 	echo "Executing $r ..."
-	ash $r
+	bash $r
 done
 
 #Generic update recipes
@@ -46,7 +46,7 @@ if [[ ! "$ZYNTHIAN_SYS_BRANCH" =~ ^stable.* ]] || [[ "$ZYNTHIAN_FORCE_UPGRADE" =
 	echo "Executing update recipes ..."
 	for r in $RECIPES_UPDATE_DIR/*.sh; do
 		echo "Executing $r ..."
-		ash $r
+		bash $r
 	done
 fi
 	

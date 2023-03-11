@@ -9,5 +9,5 @@ cd zyn-fusion-build
 ruby build-rpi3.rb
 tar -jxvf zyn-fusion-linux-3.0.3-patch1-rpi3-release.tar.bz2
 cd zyn-fusion
-ash ./install-linux.sh
+bash ./install-linux.sh
 
