@@ -100,11 +100,11 @@ source "zynthian_envars_extended.sh"
 # System
 #apk -y remove --purge isc-dhcp-client triggerhappy logrotate dphys-swapfile
  echo yes | apk add dhcpcd-dbus usbutils exfat-utils
- echo yes | apk add xinit xserver-xorg-video-fbdev x11-xserver-utils xinput libgl1-mesa-dri vnc4server 
+ echo yes | apk add xinit xf86-video-fbdev libx11 xinput mesa-dev 
  echo yes | apk add xfwm4 xfwm4-themes xfce4-panel xdotool cpufrequtils
 
  echo yes | apk add wireless-tools iw hostapd dnsmasq
- echo yes | apk add firmware-brcm80211 firmware-atheros firmware-realtek atmel-firmware firmware-misc-nonfree
+#echo yes | apk add firmware-brcm80211 firmware-atheros firmware-realtek atmel-firmware firmware-misc-nonfree
 #firmware-ralink
 
 # Alternate XServer with some 2D acceleration
@@ -113,7 +113,8 @@ source "zynthian_envars_extended.sh"
 
 # CLI Tools
  echo yes | apk add psmisc tree joe nano vim p7zip i2c-tools ddcutil
- echo yes | apk add fbi scrot mpg123  mplayer xloadimage imagemagick fbcat abcmidi
+ echo yes | apk add scrot mpg123  mplayer imagemagick
+ #TODO fbcat abcmidi fbi xloadimage
  echo yes | apk add evtest libtsm libtsm-dev # touchscreen tools
 #apk install python-smbus (i2c with python)
 
@@ -129,19 +130,19 @@ source "zynthian_envars_extended.sh"
 #------------------------------------------------
 
 #Tools
- echo yes | apk add git swig subversion pkgconf autoconf automake gettext intltool libtool cmake flex bison ngrep qt5-base qt5-base-dev libstdc++ ruby ruby-rake libxslt vorbis-tools zenity
+ echo yes | apk add git swig subversion pkgconf autoconf automake gettext intltool libtool cmake flex bison ngrep qt5-qtbase qt5-qtbase-dev libstdc++ ruby ruby-rake libxslt vorbis-tools zenity build-base
 
 # AV Libraries => WARNING It should be changed on every new debian version!!
  echo yes | apk add ffmpeg-dev ffmpeg-libs
 
 # Libraries
- echo yes | apk add libfftw3-dev libxml2-dev zlib-dev fltk-fluid libfltk \
+ echo yes | apk add fftw-dev libxml2-dev zlib-dev fltk-fluid libfltk \
 ncurses-dev ncurses ncurses5-libs liblo-dev libjpeg jpeg-dev libxpm-dev cairo-dev mesa-dev mesa-gl \
 alsa-lib-dev dbus-x11 jack jack-dev a2jmidid libffi-dev \
 fontconfig fontconfig-dev libxft-dev expat-dev glib-dev gettext-dev sqlite-dev sqlite-libs \
 glibmm-dev eigen-dev libsndfile-dev libsamplerate-dev armadillo readline-dev \
 libxi-dev gtk+2.0 gtk+2.0-dev gtkmm lrdf-static boost-dev zita-convolver \
-zita-resampler font-roboto ttf-roboto libxcursor-dev libxinerama-dev mesa-dev mesa-gl libgl1-mesa-dev \
+zita-resampler font-roboto ttf-roboto libxcursor-dev libxinerama-dev \
 freetype-dev freetype  ffmpeg4  libqt4-dev qt5-qtbase-dev qt5-qtdeclarative-dev libcanberra \
 libcanberra-gtk3 xcb-util-cursor-dev gtk+3.0-dev gtk+3.0 libxcb-dev libxcb xcb-util xcb-util-renderutil-dev libxcb-keysyms1-dev libxcb-xkb-dev \
 libxkbcommon-x11 openssl-dev mpg123 lame
@@ -152,15 +153,15 @@ libxkbcommon-x11 openssl-dev mpg123 lame
 
 # Python
 # echo yes | apk add python python-dev cython python-dbus python-setuptools
- echo yes | apk add python3 python3-dev cython3 python3-cffi python3-tk python3-dbus python3-mpmath python3-pil python3-pil.imagetk python3-setuptools python3-pyqt4 python3-numpy-dev python3-evdev 2to3
-
+ echo yes | apk add python3 python3-dev py3-pip cython3 py3-cffi py3-tkinter py3-dbus py3-pillow py3-setuptools py3-pyqt5 py3-libevdev
+#TODO python3-mpmath py3-pil.imagetk
 if [ "$ZYNTHIAN_INCLUDE_PIP" == "yes" ]; then
      echo yes | apk add py2-pip py3-pip
 fi
 
-pip3 install tornado==4.1 tornadostreamform websocket-client
-pip3 install jsonpickle oyaml psutil pexpect requests
-pip3 install mido python-rtmidi patchage rpi_ws281x
+py3-pip install tornado==4.1 tornadostreamform websocket-client
+py3-pip install jsonpickle oyaml psutil pexpect requests
+py3-pip install mido python-rtmidi patchage rpi_ws281x
 #mutagen
 
 #************************************************
@@ -363,7 +364,7 @@ $ZYNTHIAN_RECIPE_DIR/install_mod-ttymidi.sh
 # Install the njconnect Jack Graph Manager
 #PORTREMOVED$ZYNTHIAN_RECIPE_DIR/install_njconnect.sh
 
-# Install Mutagen (when available, use pip3 install)
+# Install Mutagen (when available, use py3-pip install)
 #PORTREMOVED$ZYNTHIAN_RECIPE_DIR/install_mutagen.sh
 
 # Install VL53L0X library (Distance Sensor)
@@ -432,7 +433,7 @@ $ZYNTHIAN_RECIPE_DIR/install_aeolus.sh
 # echo yes | apk add mididings
 
 # Install Pure Data stuff
-# echo yes | apk add puredata puredata-core puredata-utils python3-yaml \
+# echo yes | apk add puredata puredata-core puredata-utils py3-yaml \
 #pd-lua pd-moonlib pd-pdstring pd-markex pd-iemnet pd-plugin pd-ekext pd-import pd-bassemu pd-readanysf pd-pddp \
 #pd-zexy pd-list-abs pd-flite pd-windowing pd-fftease pd-bsaylor pd-osc pd-sigpack pd-hcs pd-pdogg pd-purepd \
 #pd-beatpipe pd-freeverb pd-iemlib pd-smlib pd-hid pd-csound pd-aubio pd-earplug pd-wiimote pd-pmpd pd-motex \
