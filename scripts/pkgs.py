@@ -1,6 +1,6 @@
 import re
 
-pattern = re.compile(r"apk add -y(.*?)(^\s*$|^apk add -y)", re.MULTILINE | re.DOTALL)
+pattern = re.compile(r"apk add(.*?)(^\s*$|^apk add)", re.MULTILINE | re.DOTALL)
 
 filename = "setup_system_alpine_linux.sh"
 

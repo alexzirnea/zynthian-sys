@@ -59,7 +59,7 @@ source "zynthian_envars_extended.sh"
 #apk -y dist-upgrade
 
 # Install required dependencies if needed
-apk add -y sudo parted gpgv
+apk add sudo parted gpgv
 #htpdate
 
 # Adjust System Date/Time
@@ -99,22 +99,22 @@ apk add -y sudo parted gpgv
 
 # System
 #apk -y remove --purge isc-dhcp-client triggerhappy logrotate dphys-swapfile
-apk add -y dhcpcd-dbus usbutils exfat-utils
-apk add -y xinit xserver-xorg-video-fbdev x11-xserver-utils xinput libgl1-mesa-dri vnc4server 
-apk add -y xfwm4 xfwm4-themes xfce4-panel xdotool cpufrequtils
+apk add dhcpcd-dbus usbutils exfat-utils
+apk add xinit xserver-xorg-video-fbdev x11-xserver-utils xinput libgl1-mesa-dri vnc4server 
+apk add xfwm4 xfwm4-themes xfce4-panel xdotool cpufrequtils
 
-apk add -y wireless-tools iw hostapd dnsmasq
-apk add -y firmware-brcm80211 firmware-atheros firmware-realtek atmel-firmware firmware-misc-nonfree
+apk add wireless-tools iw hostapd dnsmasq
+apk add firmware-brcm80211 firmware-atheros firmware-realtek atmel-firmware firmware-misc-nonfree
 #firmware-ralink
 
 # Alternate XServer with some 2D acceleration
-#apk add -y xserver-xorg-video-fbturbo
+#apk add xserver-xorg-video-fbturbo
 #ln -s /usr/lib/arm-linux-gnueabihf/xorg/modules/drivers/fbturbo_drv.so /usr/lib/xorg/modules/drivers
 
 # CLI Tools
-apk add -y psmisc tree joe nano vim p7zip i2c-tools ddcutil
-apk add -y fbi scrot mpg123  mplayer xloadimage imagemagick fbcat abcmidi
-apk add -y evtest libtsm libtsm-dev # touchscreen tools
+apk add psmisc tree joe nano vim p7zip i2c-tools ddcutil
+apk add fbi scrot mpg123  mplayer xloadimage imagemagick fbcat abcmidi
+apk add evtest libtsm libtsm-dev # touchscreen tools
 #apk install python-smbus (i2c with python)
 
 
@@ -129,13 +129,13 @@ apk add -y evtest libtsm libtsm-dev # touchscreen tools
 #------------------------------------------------
 
 #Tools
-apk add -y git swig subversion pkgconf autoconf automake gettext intltool libtool cmake flex bison ngrep qt5-base qt5-base-dev libstdc++ ruby ruby-rake libxslt vorbis-tools zenity
+apk add git swig subversion pkgconf autoconf automake gettext intltool libtool cmake flex bison ngrep qt5-base qt5-base-dev libstdc++ ruby ruby-rake libxslt vorbis-tools zenity
 
 # AV Libraries => WARNING It should be changed on every new debian version!!
-apk add -y ffmpeg-dev ffmpeg-libs
+apk add ffmpeg-dev ffmpeg-libs
 
 # Libraries
-apk add -y libfftw3-dev libxml2-dev zlib-dev fltk-fluid libfltk \
+apk add libfftw3-dev libxml2-dev zlib-dev fltk-fluid libfltk \
 ncurses-dev ncurses ncurses5-libs liblo-dev libjpeg jpeg-dev libxpm-dev cairo-dev mesa-dev mesa-gl \
 alsa-lib-dev dbus-x11 jack jack-dev a2jmidid libffi-dev \
 fontconfig fontconfig-dev libxft-dev expat-dev glib-dev gettext-dev sqlite-dev sqlite-libs \
@@ -151,11 +151,11 @@ libxkbcommon-x11 openssl-dev mpg123 lame
 #libgd2-xpm-dev
 
 # Python
-#apk add -y python python-dev cython python-dbus python-setuptools
-apk add -y python3 python3-dev cython3 python3-cffi python3-tk python3-dbus python3-mpmath python3-pil python3-pil.imagetk python3-setuptools python3-pyqt4 python3-numpy-dev python3-evdev 2to3
+#apk add python python-dev cython python-dbus python-setuptools
+apk add python3 python3-dev cython3 python3-cffi python3-tk python3-dbus python3-mpmath python3-pil python3-pil.imagetk python3-setuptools python3-pyqt4 python3-numpy-dev python3-evdev 2to3
 
 if [ "$ZYNTHIAN_INCLUDE_PIP" == "yes" ]; then
-    apk add -y py2-pip py3-pip
+    apk add py2-pip py3-pip
 fi
 
 pip3 install tornado==4.1 tornadostreamform websocket-client
@@ -301,7 +301,7 @@ $ZYNTHIAN_SYS_DIR/scripts/set_first_boot.sh
 #************************************************
 
 # Install some extra packages:
-#apk add -y jack-midi-clock midisport-firmware
+#apk add jack-midi-clock midisport-firmware
 
 # Install Jack2
 $ZYNTHIAN_RECIPE_DIR/install_jack2.sh
@@ -389,10 +389,10 @@ $ZYNTHIAN_RECIPE_DIR/install_mod-ttymidi.sh
 
 # Install ZynAddSubFX
 #$ZYNTHIAN_RECIPE_DIR/install_zynaddsubfx.sh
-#apk add -y zynaddsubfx
+#apk add zynaddsubfx
 
 # Install Fluidsynth & SF2 SondFonts
-apk add -y fluidsynth
+apk add fluidsynth
 # Create SF2 soft links
 ln -s /usr/share/sounds/sf2/*.sf2 $ZYNTHIAN_DATA_DIR/soundfonts/sf2
 
@@ -404,11 +404,11 @@ ln -s /usr/share/sounds/sf2/*.sf2 $ZYNTHIAN_DATA_DIR/soundfonts/sf2
 
 # Install Sfizz (SFZ player)
 #$ZYNTHIAN_RECIPE_DIR/install_sfizz.sh
-#apk add -y sfizz
+#apk add sfizz
 
 # Install Linuxsampler
 #$ZYNTHIAN_RECIPE_DIR/install_linuxsampler_stable.sh
-#apk add -y linuxsampler gigtools
+#apk add linuxsampler gigtools
 
 # Install Fantasia (linuxsampler Java GUI)
 #PORTREMOVED$ZYNTHIAN_RECIPE_DIR/install_fantasia.sh
@@ -425,14 +425,14 @@ cp -a $ZYNTHIAN_DATA_DIR/setbfree/cfg/zynthian_my.cfg ./setbfree/zynthian.cfg
 $ZYNTHIAN_RECIPE_DIR/install_pianoteq_demo.sh
 
 # Install Aeolus (Pipe Organ Emulator)
-#apk add -y aeolus
+#apk add aeolus
 $ZYNTHIAN_RECIPE_DIR/install_aeolus.sh
 
 # Install Mididings (MIDI route & filter)
-#apk add -y mididings
+#apk add mididings
 
 # Install Pure Data stuff
-#apk add -y puredata puredata-core puredata-utils python3-yaml \
+#apk add puredata puredata-core puredata-utils python3-yaml \
 #pd-lua pd-moonlib pd-pdstring pd-markex pd-iemnet pd-plugin pd-ekext pd-import pd-bassemu pd-readanysf pd-pddp \
 #pd-zexy pd-list-abs pd-flite pd-windowing pd-fftease pd-bsaylor pd-osc pd-sigpack pd-hcs pd-pdogg pd-purepd \
 #pd-beatpipe pd-freeverb pd-iemlib pd-smlib pd-hid pd-csound pd-aubio pd-earplug pd-wiimote pd-pmpd pd-motex \
