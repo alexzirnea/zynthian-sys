@@ -39,7 +39,7 @@ if [ ! -d "zynthian-sys" ]; then
 	git clone https://github.com/zynthian/zynthian-sys.git
 fi
 
-cd zynthian-sys/scripts
+cd /zynthian-sys/scripts
 
 if [ "$1" = "wiggle" ] || [ ! -f ~/.wiggled ]; then
 	#echo `date` >  ~/.wiggled
