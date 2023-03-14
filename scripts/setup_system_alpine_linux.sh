@@ -137,14 +137,14 @@ source "zynthian_envars_extended.sh"
 
 # Libraries
  echo yes | apk add fftw-dev libxml2-dev zlib-dev fltk-fluid libfltk \
-ncurses-dev ncurses ncurses-libs lbncursesw liblo-dev libjpeg jpeg-dev libxpm-dev cairo-dev mesa-dev mesa-gl \
+ncurses-dev ncurses ncurses-libs libncursesw liblo-dev libjpeg jpeg-dev libxpm-dev cairo-dev mesa-dev mesa-gl \
 alsa-lib-dev dbus-x11 jack jack-dev a2jmidid libffi-dev \
 fontconfig fontconfig-dev libxft-dev expat-dev glib-dev gettext-dev sqlite-dev sqlite-libs \
 glibmm-dev eigen-dev libsndfile-dev libsamplerate-dev armadillo readline-dev \
 libxi-dev gtk+2.0 gtk+2.0-dev gtkmm lrdf-static boost-dev zita-convolver \
 zita-resampler font-roboto libxcursor-dev libxinerama-dev \
 freetype-dev freetype ffmpeg4 qt5-qtbase-dev qt5-qtdeclarative-dev libcanberra \
-libcanberra-gtk3 xcb-util-cursor-dev gtk+3.0-dev gtk+3.0 libxcb-dev libxcb xcb-util xcb-util-renderutil-dev xcb-util xcb-util-keysms libxcb-dev \
+libcanberra-gtk3 xcb-util-cursor-dev gtk+3.0-dev gtk+3.0 libxcb-dev libxcb xcb-util xcb-util-renderutil-dev xcb-util xcb-util-keysyms libxcb-dev \
 libxkbcommon-x11 openssl-dev mpg123 lame
 
 #libjack-dev-session libqt4-dev
