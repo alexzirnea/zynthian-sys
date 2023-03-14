@@ -137,23 +137,23 @@ source "zynthian_envars_extended.sh"
 
 # Libraries
  echo yes | apk add fftw-dev libxml2-dev zlib-dev fltk-fluid libfltk \
-ncurses-dev ncurses ncurses5-libs liblo-dev libjpeg jpeg-dev libxpm-dev cairo-dev mesa-dev mesa-gl \
+ncurses-dev ncurses ncurses-libs lbncursesw liblo-dev libjpeg jpeg-dev libxpm-dev cairo-dev mesa-dev mesa-gl \
 alsa-lib-dev dbus-x11 jack jack-dev a2jmidid libffi-dev \
 fontconfig fontconfig-dev libxft-dev expat-dev glib-dev gettext-dev sqlite-dev sqlite-libs \
 glibmm-dev eigen-dev libsndfile-dev libsamplerate-dev armadillo readline-dev \
 libxi-dev gtk+2.0 gtk+2.0-dev gtkmm lrdf-static boost-dev zita-convolver \
-zita-resampler font-roboto ttf-roboto libxcursor-dev libxinerama-dev \
-freetype-dev freetype  ffmpeg4  libqt4-dev qt5-qtbase-dev qt5-qtdeclarative-dev libcanberra \
-libcanberra-gtk3 xcb-util-cursor-dev gtk+3.0-dev gtk+3.0 libxcb-dev libxcb xcb-util xcb-util-renderutil-dev libxcb-keysyms1-dev libxcb-xkb-dev \
+zita-resampler font-roboto libxcursor-dev libxinerama-dev \
+freetype-dev freetype ffmpeg4 qt5-qtbase-dev qt5-qtdeclarative-dev libcanberra \
+libcanberra-gtk3 xcb-util-cursor-dev gtk+3.0-dev gtk+3.0 libxcb-dev libxcb xcb-util xcb-util-renderutil-dev xcb-util xcb-util-keysms libxcb-dev \
 libxkbcommon-x11 openssl-dev mpg123 lame
 
-#libjack-dev-session
+#libjack-dev-session libqt4-dev
 #non-ntk-dev
 #libgd2-xpm-dev
 
 # Python
 # echo yes | apk add python python-dev cython python-dbus python-setuptools
- echo yes | apk add python3 python3-dev py3-pip cython3 py3-cffi py3-tkinter py3-dbus py3-pillow py3-setuptools py3-pyqt5 py3-libevdev
+ echo yes | apk add python3 python3-dev py3-pip cython py3-cffi python3-tkinter py3-dbus py3-pillow py3-setuptools py3-qt5 py3-libevdev
 #TODO python3-mpmath py3-pil.imagetk
 if [ "$ZYNTHIAN_INCLUDE_PIP" == "yes" ]; then
      echo yes | apk add py2-pip py3-pip
