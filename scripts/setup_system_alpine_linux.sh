@@ -156,12 +156,12 @@ libxkbcommon-x11 openssl-dev mpg123 lame
  echo yes | apk add python3 python3-dev py3-pip cython py3-cffi python3-tkinter py3-dbus py3-pillow py3-setuptools py3-qt5 py3-libevdev
 #TODO python3-mpmath py3-pil.imagetk
 if [ "$ZYNTHIAN_INCLUDE_PIP" == "yes" ]; then
-     echo yes | apk add py2-pip py3-pip
+     echo yes | apk add py3-pip
 fi
 
-py3-pip install tornado==4.1 tornadostreamform websocket-client
-py3-pip install jsonpickle oyaml psutil pexpect requests
-py3-pip install mido python-rtmidi patchage rpi_ws281x
+pip3 install tornado==4.1 tornadostreamform websocket-client
+pip3 install jsonpickle oyaml psutil pexpect requests
+pip3 install mido python-rtmidi patchage
 #mutagen
 
 #************************************************
@@ -181,7 +181,7 @@ cd $ZYNTHIAN_DIR
 git clone -b "${ZYNTHIAN_SYS_BRANCH}" "${ZYNTHIAN_SYS_REPO}"
 
 # Install WiringPi
-$ZYNTHIAN_RECIPE_DIR/install_wiringpi.sh
+#$ZYNTHIAN_RECIPE_DIR/install_wiringpi.sh
 
 # Zyncoder library
 cd $ZYNTHIAN_DIR
