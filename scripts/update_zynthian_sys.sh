@@ -403,11 +403,11 @@ if [ -z "$NO_ZYNTHIAN_UPDATE" ]; then
 	#cp -a $ZYNTHIAN_SYS_DIR/etc/network/* /etc/network
 	#cp -an $ZYNTHIAN_SYS_DIR/etc/dbus-1/* /etc/dbus-1
 	#cp -an $ZYNTHIAN_SYS_DIR/etc/security/* /etc/security
-	cp -a $ZYNTHIAN_SYS_DIR/etc/conf.d/* /etc/conf.d
+	cp -a $ZYNTHIAN_SYS_DIR/etc/init.d/* /etc/init.d
 	#cp -a $ZYNTHIAN_SYS_DIR/etc/udev/rules.d/* /etc/udev/rules.d 2>/dev/null
 	#cp -a $ZYNTHIAN_SYS_DIR/etc/avahi/* /etc/avahi
 	#cp -a $ZYNTHIAN_SYS_DIR/etc/default/* /etc/default
-	#cp -a $ZYNTHIAN_SYS_DIR/etc/ld.so.conf.d/* /etc/ld.so.conf.d
+	#cp -a $ZYNTHIAN_SYS_DIR/etc/ld.so.init.d/* /etc/ld.so.init.d
 	#cp -a $ZYNTHIAN_SYS_DIR/etc/modprobe.d/* /etc/modprobe.d
 	#cp -an $ZYNTHIAN_SYS_DIR/etc/vim/* /etc/vim
 	#cp -a $ZYNTHIAN_SYS_DIR/etc/update-motd.d/* /etc/update-motd.d
@@ -527,85 +527,85 @@ fi
 
 # Replace config vars in Systemd service files
 # First Boot service
-sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/conf.d/first_boot
+sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/init.d/first_boot
 # Cpu-performance service
-#sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/conf.d/cpu-performance
+#sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/init.d/cpu-performance
 # Wifi-Setup service
-#sed -i -e "s/#ZYNTHIAN_CONFIG_DIR#/$ZYNTHIAN_CONFIG_DIR_ESC/g" /etc/conf.d/wifi-setup
-#sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/conf.d/wifi-setup
+#sed -i -e "s/#ZYNTHIAN_CONFIG_DIR#/$ZYNTHIAN_CONFIG_DIR_ESC/g" /etc/init.d/wifi-setup
+#sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/init.d/wifi-setup
 # Splash-Screen Service
-sed -i -e "s/#FRAMEBUFFER#/$FRAMEBUFFER_ESC/g" /etc/conf.d/splash-screen
-sed -i -e "s/#ZYNTHIAN_DIR#/$ZYNTHIAN_DIR_ESC/g" /etc/conf.d/splash-screen
-sed -i -e "s/#ZYNTHIAN_UI_DIR#/$ZYNTHIAN_UI_DIR_ESC/g" /etc/conf.d/splash-screen
-sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/conf.d/splash-screen
-sed -i -e "s/#ZYNTHIAN_CONFIG_DIR#/$ZYNTHIAN_CONFIG_DIR_ESC/g" /etc/conf.d/splash-screen
+sed -i -e "s/#FRAMEBUFFER#/$FRAMEBUFFER_ESC/g" /etc/init.d/splash-screen
+sed -i -e "s/#ZYNTHIAN_DIR#/$ZYNTHIAN_DIR_ESC/g" /etc/init.d/splash-screen
+sed -i -e "s/#ZYNTHIAN_UI_DIR#/$ZYNTHIAN_UI_DIR_ESC/g" /etc/init.d/splash-screen
+sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/init.d/splash-screen
+sed -i -e "s/#ZYNTHIAN_CONFIG_DIR#/$ZYNTHIAN_CONFIG_DIR_ESC/g" /etc/init.d/splash-screen
 # Jackd service
-sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/conf.d/jack2
-sed -i -e "s/#JACKD_OPTIONS#/$JACKD_OPTIONS_ESC/g" /etc/conf.d/jack2
-sed -i -e "s/#LV2_PATH#/$LV2_PATH_ESC/g" /etc/conf.d/jack2
+sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/init.d/jack2
+sed -i -e "s/#JACKD_OPTIONS#/$JACKD_OPTIONS_ESC/g" /etc/init.d/jack2
+sed -i -e "s/#LV2_PATH#/$LV2_PATH_ESC/g" /etc/init.d/jack2
 # a2jmidid service
-sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/conf.d/a2jmidid
+sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/init.d/a2jmidid
 # mod-ttymidi service
-sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/conf.d/mod-ttymidi
+sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/init.d/mod-ttymidi
 # Aubionotes service
-sed -i -e "s/#ZYNTHIAN_AUBIONOTES_OPTIONS#/$ZYNTHIAN_AUBIONOTES_OPTIONS_ESC/g" /etc/conf.d/aubionotes
-sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/conf.d/aubionotes
+sed -i -e "s/#ZYNTHIAN_AUBIONOTES_OPTIONS#/$ZYNTHIAN_AUBIONOTES_OPTIONS_ESC/g" /etc/init.d/aubionotes
+sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/init.d/aubionotes
 # jackrtpmidid service
-sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/conf.d/jackrtpmidid
+sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/init.d/jackrtpmidid
 # qmidinet service
-sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/conf.d/qmidinet
+sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/init.d/qmidinet
 # touchosc2midi service
-sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/conf.d/touchosc2midi
+sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/init.d/touchosc2midi
 # jack-midi-clock service
-sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/conf.d/jack-midi-clock
+sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/init.d/jack-midi-clock
 # headphones service
-sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/conf.d/headphones
-sed -i -e "s/#RBPI_AUDIO_DEVICE#/$RBPI_AUDIO_DEVICE/g" /etc/conf.d/headphones
+sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/init.d/headphones
+sed -i -e "s/#RBPI_AUDIO_DEVICE#/$RBPI_AUDIO_DEVICE/g" /etc/init.d/headphones
 # MOD-HOST service
-sed -i -e "s/#LV2_PATH#/$LV2_PATH_ESC/g" /etc/conf.d/mod-host
-sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/conf.d/mod-host
+sed -i -e "s/#LV2_PATH#/$LV2_PATH_ESC/g" /etc/init.d/mod-host
+sed -i -e "s/#JACKD_BIN_PATH#/$JACKD_BIN_PATH_ESC/g" /etc/init.d/mod-host
 # MOD-SDK service
-sed -i -e "s/#LV2_PATH#/$LV2_PATH_ESC/g" /etc/conf.d/mod-sdk
-sed -i -e "s/#ZYNTHIAN_SW_DIR#/$ZYNTHIAN_SW_DIR_ESC/g" /etc/conf.d/mod-sdk
+sed -i -e "s/#LV2_PATH#/$LV2_PATH_ESC/g" /etc/init.d/mod-sdk
+sed -i -e "s/#ZYNTHIAN_SW_DIR#/$ZYNTHIAN_SW_DIR_ESC/g" /etc/init.d/mod-sdk
 # MOD-UI service
-sed -i -e "s/#LV2_PATH#/$LV2_PATH_ESC/g" /etc/conf.d/mod-ui
-sed -i -e "s/#ZYNTHIAN_SW_DIR#/$ZYNTHIAN_SW_DIR_ESC/g" /etc/conf.d/mod-ui
-sed -i -e "s/#BROWSEPY_ROOT#/$BROWSEPY_ROOT_ESC/g" /etc/conf.d/mod-ui
+sed -i -e "s/#LV2_PATH#/$LV2_PATH_ESC/g" /etc/init.d/mod-ui
+sed -i -e "s/#ZYNTHIAN_SW_DIR#/$ZYNTHIAN_SW_DIR_ESC/g" /etc/init.d/mod-ui
+sed -i -e "s/#BROWSEPY_ROOT#/$BROWSEPY_ROOT_ESC/g" /etc/init.d/mod-ui
 # browsepy service
-sed -i -e "s/#BROWSEPY_ROOT#/$BROWSEPY_ROOT_ESC/g" /etc/conf.d/browsepy
+sed -i -e "s/#BROWSEPY_ROOT#/$BROWSEPY_ROOT_ESC/g" /etc/init.d/browsepy
 # VNCServcer service
-sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" "/etc/conf.d/vncserver0"
-sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" "/etc/conf.d/vncserver1"
+sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" "/etc/init.d/vncserver0"
+sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" "/etc/init.d/vncserver1"
 # noVNC service
-sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/conf.d/novnc0
-sed -i -e "s/#ZYNTHIAN_SW_DIR#/$ZYNTHIAN_SW_DIR_ESC/g" /etc/conf.d/novnc0
-sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/conf.d/novnc1
-sed -i -e "s/#ZYNTHIAN_SW_DIR#/$ZYNTHIAN_SW_DIR_ESC/g" /etc/conf.d/novnc1
+sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/init.d/novnc0
+sed -i -e "s/#ZYNTHIAN_SW_DIR#/$ZYNTHIAN_SW_DIR_ESC/g" /etc/init.d/novnc0
+sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/init.d/novnc1
+sed -i -e "s/#ZYNTHIAN_SW_DIR#/$ZYNTHIAN_SW_DIR_ESC/g" /etc/init.d/novnc1
 # Zynthian Service
-sed -i -e "s/#FRAMEBUFFER#/$FRAMEBUFFER_ESC/g" /etc/conf.d/zynthian
-sed -i -e "s/#ZYNTHIAN_DIR#/$ZYNTHIAN_DIR_ESC/g" /etc/conf.d/zynthian
-sed -i -e "s/#ZYNTHIAN_UI_DIR#/$ZYNTHIAN_UI_DIR_ESC/g" /etc/conf.d/zynthian
-sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/conf.d/zynthian
-sed -i -e "s/#ZYNTHIAN_CONFIG_DIR#/$ZYNTHIAN_CONFIG_DIR_ESC/g" /etc/conf.d/zynthian
+sed -i -e "s/#FRAMEBUFFER#/$FRAMEBUFFER_ESC/g" /etc/init.d/zynthian
+sed -i -e "s/#ZYNTHIAN_DIR#/$ZYNTHIAN_DIR_ESC/g" /etc/init.d/zynthian
+sed -i -e "s/#ZYNTHIAN_UI_DIR#/$ZYNTHIAN_UI_DIR_ESC/g" /etc/init.d/zynthian
+sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/init.d/zynthian
+sed -i -e "s/#ZYNTHIAN_CONFIG_DIR#/$ZYNTHIAN_CONFIG_DIR_ESC/g" /etc/init.d/zynthian
 # Zynthian Debug Service
-sed -i -e "s/#FRAMEBUFFER#/$FRAMEBUFFER_ESC/g" /etc/conf.d/zynthian_debug
-sed -i -e "s/#ZYNTHIAN_DIR#/$ZYNTHIAN_DIR_ESC/g" /etc/conf.d/zynthian_debug
-sed -i -e "s/#ZYNTHIAN_UI_DIR#/$ZYNTHIAN_UI_DIR_ESC/g" /etc/conf.d/zynthian_debug
-sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/conf.d/zynthian_debug
-sed -i -e "s/#ZYNTHIAN_CONFIG_DIR#/$ZYNTHIAN_CONFIG_DIR_ESC/g" /etc/conf.d/zynthian_debug
+sed -i -e "s/#FRAMEBUFFER#/$FRAMEBUFFER_ESC/g" /etc/init.d/zynthian_debug
+sed -i -e "s/#ZYNTHIAN_DIR#/$ZYNTHIAN_DIR_ESC/g" /etc/init.d/zynthian_debug
+sed -i -e "s/#ZYNTHIAN_UI_DIR#/$ZYNTHIAN_UI_DIR_ESC/g" /etc/init.d/zynthian_debug
+sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/init.d/zynthian_debug
+sed -i -e "s/#ZYNTHIAN_CONFIG_DIR#/$ZYNTHIAN_CONFIG_DIR_ESC/g" /etc/init.d/zynthian_debug
 # Zynthian Webconf Service
-sed -i -e "s/#ZYNTHIAN_DIR#/$ZYNTHIAN_DIR_ESC/g" /etc/conf.d/zynthian-webconf
-sed -i -e "s/#ZYNTHIAN_CONFIG_DIR#/$ZYNTHIAN_CONFIG_DIR_ESC/g" /etc/conf.d/zynthian-webconf
-sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/conf.d/zynthian-webconf
+sed -i -e "s/#ZYNTHIAN_DIR#/$ZYNTHIAN_DIR_ESC/g" /etc/init.d/zynthian-webconf
+sed -i -e "s/#ZYNTHIAN_CONFIG_DIR#/$ZYNTHIAN_CONFIG_DIR_ESC/g" /etc/init.d/zynthian-webconf
+sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/init.d/zynthian-webconf
 # Zynthian Config-On-Boot Service
-sed -i -e "s/#ZYNTHIAN_DIR#/$ZYNTHIAN_DIR_ESC/g" /etc/conf.d/zynthian-config-on-boot
-sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/conf.d/zynthian-config-on-boot
-sed -i -e "s/#ZYNTHIAN_CONFIG_DIR#/$ZYNTHIAN_CONFIG_DIR_ESC/g" /etc/conf.d/zynthian-config-on-boot
+sed -i -e "s/#ZYNTHIAN_DIR#/$ZYNTHIAN_DIR_ESC/g" /etc/init.d/zynthian-config-on-boot
+sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/init.d/zynthian-config-on-boot
+sed -i -e "s/#ZYNTHIAN_CONFIG_DIR#/$ZYNTHIAN_CONFIG_DIR_ESC/g" /etc/init.d/zynthian-config-on-boot
 # Zynthian PWM Fan Service
-sed -i -e "s/#ZYNTHIAN_DIR#/$ZYNTHIAN_DIR_ESC/g" /etc/conf.d/zynthian-pwm-fan
-sed -i -e "s/#ZYNTHIAN_UI_DIR#/$ZYNTHIAN_UI_DIR_ESC/g" /etc/conf.d/zynthian-pwm-fan
-sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/conf.d/zynthian-pwm-fan
-sed -i -e "s/#ZYNTHIAN_CONFIG_DIR#/$ZYNTHIAN_CONFIG_DIR_ESC/g" /etc/conf.d/zynthian-pwm-fan
+sed -i -e "s/#ZYNTHIAN_DIR#/$ZYNTHIAN_DIR_ESC/g" /etc/init.d/zynthian-pwm-fan
+sed -i -e "s/#ZYNTHIAN_UI_DIR#/$ZYNTHIAN_UI_DIR_ESC/g" /etc/init.d/zynthian-pwm-fan
+sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/init.d/zynthian-pwm-fan
+sed -i -e "s/#ZYNTHIAN_CONFIG_DIR#/$ZYNTHIAN_CONFIG_DIR_ESC/g" /etc/init.d/zynthian-pwm-fan
 
 # Zynthian apt repository
 #if [ "$ZYNTHIAN_SYS_BRANCH" != "stable" ]; then
