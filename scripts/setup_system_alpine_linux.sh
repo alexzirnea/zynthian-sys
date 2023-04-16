@@ -153,7 +153,7 @@ libxkbcommon-x11 openssl-dev mpg123 lame
 
 # Python
 # echo yes | apk add python python-dev cython python-dbus python-setuptools
- echo yes | apk add python3 python3-dev py3-pip cython py3-cffi python3-tkinter py3-dbus py3-pillow py3-setuptools py3-qt5 py3-libevdev
+ echo yes | apk add python3=3.10.11-r0 python3-dev py3-pip cython py3-cffi python3-tkinter py3-dbus py3-pillow py3-setuptools py3-qt5 py3-libevdev
 #TODO python3-mpmath py3-pil.imagetk
 if [ "$ZYNTHIAN_INCLUDE_PIP" == "yes" ]; then
      echo yes | apk add py3-pip
