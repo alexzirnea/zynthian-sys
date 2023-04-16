@@ -279,9 +279,9 @@ else
 fi
 
 # Install zynthian repository public key
-if [ ! -f "/etc/apt/sources.list.d/zynthian.list" ]; then
-	apt-key add $ZYNTHIAN_SYS_DIR/etc/apt/pubkeys/zynthian.pub
-fi
+#if [ ! -f "/etc/apt/sources.list.d/zynthian.list" ]; then
+#	apt-key add $ZYNTHIAN_SYS_DIR/etc/apt/pubkeys/zynthian.pub
+#fi
 
 # Copy zynthian specific config files
 cp -a $ZYNTHIAN_SYS_DIR/config/wiring-profiles $ZYNTHIAN_CONFIG_DIR
@@ -608,19 +608,19 @@ sed -i -e "s/#ZYNTHIAN_SYS_DIR#/$ZYNTHIAN_SYS_DIR_ESC/g" /etc/conf.d/zynthian-pw
 sed -i -e "s/#ZYNTHIAN_CONFIG_DIR#/$ZYNTHIAN_CONFIG_DIR_ESC/g" /etc/conf.d/zynthian-pwm-fan
 
 # Zynthian apt repository
-if [ "$ZYNTHIAN_SYS_BRANCH" != "stable" ]; then
-	sed -i -e "s/zynthian-stable/zynthian-testing/g" /etc/apt/sources.list.d/zynthian.list
-fi
+#if [ "$ZYNTHIAN_SYS_BRANCH" != "stable" ]; then
+#	sed -i -e "s/zynthian-stable/zynthian-testing/g" /etc/apt/sources.list.d/zynthian.list
+#fi
 
 # Reload Systemd scripts
-systemctl daemon-reload
+#systemctl daemon-reload
 
 #enable the pwm fan service if an EPDF hat is detected, or disable it if hat not present
-if [ $ZYNTHIAN_EPDF_HAT -eq 0 ]; then
-    systemctl enable zynthian-pwm-fan
-else
-    systemctl disable zynthian-pwm-fan
-fi
+#if [ $ZYNTHIAN_EPDF_HAT -eq 0 ]; then
+#    systemctl enable zynthian-pwm-fan
+#else
+#    systemctl disable zynthian-pwm-fan
+#fi
 
 if [ -f "$ZYNTHIAN_MY_DATA_DIR/scripts/update_zynthian_sys.sh" ]; then
 	bash "$ZYNTHIAN_MY_DATA_DIR/scripts/update_zynthian_sys.sh"

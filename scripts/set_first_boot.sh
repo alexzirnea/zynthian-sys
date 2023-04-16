@@ -2,13 +2,13 @@
 
 # Stop zynthian services
 echo "Stopping zynthian services..."
-systemctl stop zynthian
-systemctl stop zynthian-webconf
+rc-service zynthian stop
+rc-service zynthian-webconf stop
 
 # Clean unneeded packages & apt cache
-echo "Cleaning unused packages and cache..."
-apt-get -y autoremove
-apt-get clean
+echo "Cleaning apk cache..."
+apk -v cache clean
+#apt-get clean
 
 # Delete configured wifi networks
 echo "Deleting wifi networks..."
@@ -48,9 +48,9 @@ echo "Enabling first boot service..."
 rc-update add first_boot
 
 # Message
-echo "The system is going to halt. Extract the SD card and dump the image."
-sleep 3
-sync
+#echo "The system is going to halt. Extract the SD card and dump the image."
+#sleep 3
+#sync
 
 # Power Off
-poweroff   
+#poweroff   
