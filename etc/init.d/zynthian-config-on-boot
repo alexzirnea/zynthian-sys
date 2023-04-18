@@ -2,7 +2,7 @@
 
 name=$RC_SVCNAME
 description="Config-On-Boot Service"
-command=""
+command="/bin/bash"
 command_args="#ZYNTHIAN_SYS_DIR#/sbin/config-on-boot.sh"
 
 depend() {

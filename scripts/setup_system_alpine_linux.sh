@@ -308,10 +308,10 @@ $ZYNTHIAN_SYS_DIR/scripts/set_first_boot.sh
 $ZYNTHIAN_RECIPE_DIR/install_jack2.sh
 
 # Install alsaseq Python Library
-#$ZYNTHIAN_RECIPE_DIR/install_alsaseq.sh
+$ZYNTHIAN_RECIPE_DIR/install_alsaseq.sh
 
 # Install NTK library
-#PORTREMOVED$ZYNTHIAN_RECIPE_DIR/install_ntk.sh
+$ZYNTHIAN_RECIPE_DIR/install_ntk.sh
 
 # Install pyliblo library (liblo OSC library for Python)
 $ZYNTHIAN_RECIPE_DIR/install_pyliblo.sh
@@ -329,7 +329,7 @@ $ZYNTHIAN_RECIPE_DIR/install_mod-ttymidi.sh
 #PORTREMOVED$ZYNTHIAN_RECIPE_DIR/install_lv2_jalv.sh
 
 # Install Aubio Library & Tools
-#PORTREMOVED$ZYNTHIAN_RECIPE_DIR/install_aubio.sh
+$ZYNTHIAN_RECIPE_DIR/install_aubio.sh
 
 # Install jpmidi (MID player for jack with transport sync)
 #PORTREMOVED$ZYNTHIAN_RECIPE_DIR/install_jpmidi.sh
@@ -344,7 +344,7 @@ $ZYNTHIAN_RECIPE_DIR/install_mod-ttymidi.sh
 #PORTREMOVED$ZYNTHIAN_RECIPE_DIR/install_touchosc2midi.sh
 
 # Install jackclient (jack-client python library)
-#PORTREMOVED$ZYNTHIAN_RECIPE_DIR/install_jackclient-python.sh
+$ZYNTHIAN_RECIPE_DIR/install_jackclient-python.sh
 
 # Install QMidiNet (MIDI over IP Multicast)
 #PORTREMOVED$ZYNTHIAN_RECIPE_DIR/install_qmidinet.sh
@@ -377,7 +377,7 @@ $ZYNTHIAN_RECIPE_DIR/install_mod-ttymidi.sh
 #PORTREMOVED$ZYNTHIAN_RECIPE_DIR/install_noVNC.sh
 
 # Install terminal emulator for tornado (webconf)
-#PORTREMOVED$ZYNTHIAN_RECIPE_DIR/install_terminado.sh
+$ZYNTHIAN_RECIPE_DIR/install_terminado.sh
 
 # Install DT overlays for waveshare displays and others
 #PORTREMOVED$ZYNTHIAN_RECIPE_DIR/install_waveshare-dtoverlays.sh

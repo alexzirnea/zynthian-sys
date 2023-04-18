@@ -5,6 +5,8 @@ description="Zynthian User Interface"
 supervisor="supervise-daemon"
 command="/usr/bin/startx"
 command_args="./zynthian.sh"
+output_log="/var/log/zynthian.log"
+error_log="/var/log/zynthian.err"
 supervise_daemon_args=" -d #ZYNTHIAN_UI_DIR# -e ZYNTHIAN_CONFIG_DIR=\"#ZYNTHIAN_CONFIG_DIR#\""
 
 depend() {
