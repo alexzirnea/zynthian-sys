@@ -181,7 +181,7 @@ cd $ZYNTHIAN_DIR
 git clone -b "${ZYNTHIAN_SYS_BRANCH}" "${ZYNTHIAN_SYS_REPO}"
 
 # Install WiringPi
-#$ZYNTHIAN_RECIPE_DIR/install_wiringpi.sh
+$ZYNTHIAN_RECIPE_DIR/install_wiringpi.sh
 
 # Zyncoder library
 cd $ZYNTHIAN_DIR
