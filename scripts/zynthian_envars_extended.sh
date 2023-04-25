@@ -56,7 +56,8 @@ export LINUX_OS_VERSION=$(lsb_release -cs)
 export LINUX_KERNEL_VERSION=$(uname -r)
 export ZYNTHIAN_OS_VERSION=$(cat /etc/zynthianos_version)
 if [ -z "$VIRTUALIZATION" ]; then
-	export VIRTUALIZATION=$(systemd-detect-virt)
+	#export VIRTUALIZATION=$(systemd-detect-virt)
+	export VIRTUALIZATION="none"
 fi
 
 echo ""

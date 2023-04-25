@@ -1,9 +1,14 @@
 #!/sbin/openrc-run
 
+export PATH=/usr/local/bin:/zynthian/zynthian-sys/sbin:/bin/:/usr/bin:/sbin:/usr/sbin
+export HOME=/root
+export ZYNTHIAN_DIR=/zynthian
+export ZYNTHIAN_SYS_DIR=/zynthian/zynthian-sys
+export ZYNTHIAN_CONFIG_DIR=/zynthian/zynthian-webconf
+
 name=$RC_SVCNAME
 description="Zynthian Webconf"
 supervisor="supervise-daemon"
-command="/bin/bash"
-command_args="#ZYNTHIAN_DIR#/zynthian-webconf/zynthian_webconf.sh"
+command="/zynthian/zynthian-webconf/zynthian_webconf.sh"
 output_log="/var/log/zynthian_webconf.log"
 error_log="/var/log/zynthian_webconf.err"
