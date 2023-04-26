@@ -25,6 +25,10 @@
 #------------------------------------------------------------------------------
 # Load Environment Variables
 #------------------------------------------------------------------------------
+if ! [ -f /etc/zynthianos_version ]
+	echo "Creating ZynthianOS version file..."
+	echo "2304" > /etc/zynthianos_version
+fi
 
 source "zynthian_envars_extended.sh"
 
@@ -59,7 +63,7 @@ source "zynthian_envars_extended.sh"
 #apk -y dist-upgrade
 
 # Install required dependencies if needed
- echo yes | apk add sudo parted gpgv
+ echo yes | apk add sudo parted gpgv virt-what
 #htpdate
 
 # Adjust System Date/Time
@@ -162,6 +166,7 @@ fi
 pip3 install tornado==4.1 tornadostreamform websocket-client
 pip3 install jsonpickle oyaml psutil pexpect requests
 pip3 install mido python-rtmidi patchage
+pip3 install meson nanopy
 #mutagen
 
 #************************************************

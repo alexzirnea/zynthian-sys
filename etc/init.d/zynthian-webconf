@@ -5,6 +5,7 @@ export HOME=/root
 export ZYNTHIAN_DIR=/zynthian
 export ZYNTHIAN_SYS_DIR=/zynthian/zynthian-sys
 export ZYNTHIAN_CONFIG_DIR=/zynthian/zynthian-webconf
+export PYTHONPATH=/usr/lib/python3.11/dist-packages:/zynthian/zynthian-ui
 
 name=$RC_SVCNAME
 description="Zynthian Webconf"
