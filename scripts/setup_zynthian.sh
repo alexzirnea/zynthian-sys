@@ -34,8 +34,8 @@ cd
 if [ ! -d "zynthian-sys" ]; then
 	apt-get update
 	apt-get -y install apt-utils
-	apt-get -y install sudo git parted screen
-	git clone https://github.com/zynthian/zynthian-sys.git
+	apt-get -y install sudo git parted screen lsb-release
+	git clone https://github.com/alexzirnea/zynthian-sys.git
 fi
 
 cd zynthian-sys/scripts
@@ -46,7 +46,8 @@ if [ "$1" = "wiggle" ] || [ ! -f ~/.wiggled ]; then
 else
 	#./setup_system_rbpi_minibian_jessie.sh
 	#./setup_system_rbpi_raspbian_lite_stretch.sh
-	./setup_system_rbpi_raspbian_lite_buster.sh
+	#./setup_system_rbpi_raspbian_lite_buster.sh
+	./setup_system_rbpi_mobian_debian_bookworm.sh
 	cd
 	rm -rf zynthian-sys
 fi
