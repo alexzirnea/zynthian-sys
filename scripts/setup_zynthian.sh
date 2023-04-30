@@ -47,7 +47,7 @@ else
 	#./setup_system_rbpi_minibian_jessie.sh
 	#./setup_system_rbpi_raspbian_lite_stretch.sh
 	#./setup_system_rbpi_raspbian_lite_buster.sh
-	./setup_system_rbpi_mobian_debian_bookworm.sh
+	./setup_system_mobian_debian_bookworm.sh
 	cd
 	rm -rf zynthian-sys
 fi
